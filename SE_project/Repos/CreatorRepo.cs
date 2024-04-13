@@ -2,6 +2,10 @@ using System;
 using System.Data;
 using Microsoft.Data.SqlClient;
 using System.Configuration;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 
 namespace SE_project
 {
@@ -13,22 +17,21 @@ namespace SE_project
 		{
 			string connectionString =
 				ConfigurationLoaderFactory.GetConfigurationLoader("appconfig.json").
-				GetValue<string>("DatabaseConnection"); ;
+			GetValue<string>("DatabaseConnection"); ;
 			connection = new SqlConnection(connectionString);
 		}
-
 		public void AddCreator(Creator creator, string hashedPass)
 		{
-			string query = "INSERT INTO Creator (fullname, username, email, country, birthdate, socialmedialink, description, password) VALUES (@FullName, @Username, @Email, @Country, @Birthdate, @SocialMediaLink, @Description, @Password)";
+			string query = "INSERT INTO Creator(fullname, username, email, country, birthdate, socialmedialink, description, profilePicPath, password)  VALUES (@FullName, @Username, @Email, @Country, @Birthdate, @SocialMediaLink, @Description, @ProfilePicPath, @Password)";
 			SqlCommand command = new SqlCommand(query, connection);
-
 			command.Parameters.AddWithValue("@FullName", creator.fullname);
 			command.Parameters.AddWithValue("@Username", creator.username);
 			command.Parameters.AddWithValue("@Email", creator.email);
 			command.Parameters.AddWithValue("@Country", creator.country);
 			command.Parameters.AddWithValue("@Birthdate", creator.birthday);
-            command.Parameters.AddWithValue("@SocialMediaLink", creator.socialmedialink);
+			command.Parameters.AddWithValue("@SocialMediaLink", creator.socialmedialink);
             command.Parameters.AddWithValue("@Description", creator.description);
+            command.Parameters.AddWithValue("@ProfilePicPath", creator.profilePicPath);
 			command.Parameters.AddWithValue("@Password", hashedPass);
 			
 			try
@@ -62,7 +65,7 @@ namespace SE_project
 
 		public Creator GetCreatorById(int creatorId)
 		{
-			string query = "SELECT id, username, fullname, email, country, birthdate, socialmedialink, description FROM Creator WHERE id = @Id";
+			string query = "SELECT id, username, fullname, email, country, birthdate, socialmedialink, description, profilePicPath FROM Creator WHERE id = @Id";
 			SqlCommand command = new SqlCommand(query, connection);
 			command.Parameters.AddWithValue("@Id", creatorId);
 
@@ -79,7 +82,8 @@ namespace SE_project
 						reader["country"].ToString(),
 						reader["birthdate"].ToString(),
 						reader["socialemedialink"].ToString(),
-						reader["description"].ToString()
+						reader["description"].ToString(),
+						reader["profilePicPath"].ToString()
                     );
 				}
 				return null;

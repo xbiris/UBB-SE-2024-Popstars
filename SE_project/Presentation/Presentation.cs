@@ -17,11 +17,11 @@ namespace SE_project.Presentation
 			_albumService = new AlbumService();
 		}
 
-		public void AddCreator(string fullname, string username, string email, string country, string birthday, string socialMediaLink, string description, string hashedPass)
+		public void AddCreator(string fullname, string username, string email, string country, string birthday, string socialMediaLink, string description, string profilePicPath, string hashedPass)
 		{
 			try
 			{
-				_creatorService.AddCreator(fullname, username, email, country, birthday, socialMediaLink, description, hashedPass);
+				_creatorService.AddCreator(fullname, username, email, country, birthday, socialMediaLink, description, profilePicPath, hashedPass);
 				Console.WriteLine("Creator added successfully.");
 			}
 			catch (Exception ex)

@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Media.Imaging;
 using Microsoft.Data.SqlClient;
 using SE_project.Presentation;
 using SE_project.Services;
@@ -11,7 +12,12 @@ namespace SE_project
 		{
 			InitializeComponent();
 			PresentationSpotify presentation = new PresentationSpotify();
-			presentation.AddCreator("123", "123", "123@example.com", "USA", "1980-05-15", "http://twitter.com/johndoe", "An enthusiastic music producer", "pass");
+
+			string profilePictureUri = "photo123.jpg";
+			Uri imageUri = new Uri(profilePictureUri, UriKind.Relative);
+			BitmapImage imageBitmap = new BitmapImage(imageUri);
+
+			presentation.AddCreator("123", "123", "123@example.com", "USA", "1980-05-15", "http://twitter.com/johndoe", "An enthusiastic music producer", profilePictureUri, "pass");
 
 			presentation.AddAlbum("Summer Vibes", "2023-07-01", "Pop", "http://example.com/photo.jpg", 1); 
 
