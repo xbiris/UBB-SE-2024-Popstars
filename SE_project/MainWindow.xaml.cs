@@ -1,13 +1,4 @@
-﻿using System.Text;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
 namespace SE_project
 {
@@ -16,6 +7,19 @@ namespace SE_project
 		public MainWindow()
 		{
 			InitializeComponent();
+
+			AlbumRepo albumRepo = new AlbumRepo();
+			List<Song> songs = new List<Song>();
+			songs.Add(new Song("piesa", "url"));
+			songs.Add(new Song("piesa1", "url"));
+			Album album = new Album("test", "release", "pop", "url", songs);
+
+			albumRepo.AddAlbum(album, 1);
+
+			outputTextBlock.Text = "Album added successfully!";
+
+			Album album1 = albumRepo.GetAlbumById(1);
+			outputTextBlock.Text = album1.title;
 		}
 	}
 }

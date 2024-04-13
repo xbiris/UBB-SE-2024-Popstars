@@ -17,8 +17,7 @@ namespace SE_project
 
 		public List<Song> Songs { get; set; }
 	
-		public Album(int id, string title, string releaseDate, string genre, string photoUrl, List<Song> Songs) {
-			this.id = id;
+		public Album(string title, string releaseDate, string genre, string photoUrl, List<Song> Songs) {
 			this.title = title;
 			this.releaseDate = releaseDate;
 			this.genre = genre;
