@@ -16,8 +16,9 @@ namespace SE_project
 		public string birthday { get; set; }
 		public string socialmedialink { get; set; }
         public string description { get; set; }
+        public string profilePicPath { get; set; }
 
-        public Creator(string username, string fullname, string email, string country, string birthday, string socialmedialink, string description)
+        public Creator(string username, string fullname, string email, string country, string birthday, string socialmedialink, string description, string profilePicPath)
 		{
 			this.username = username;
 			this.fullname = fullname;
@@ -26,7 +27,7 @@ namespace SE_project
 			this.birthday = birthday;
 			this.socialmedialink = socialmedialink;
 			this.description = description;
-
+			this.profilePicPath = profilePicPath;
         }
 	}
 }

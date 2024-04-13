@@ -7,12 +7,13 @@ USE se_2024;
 CREATE TABLE Creator (
     id INT IDENTITY(1,1) PRIMARY KEY,
     fullname VARCHAR(255),
-    username VARCHAR(255) UNIQUE,
-    email VARCHAR(255) UNIQUE,
+    username VARCHAR(255),
+    email VARCHAR(255),
     country VARCHAR(255),
     birthdate VARCHAR(255),
     socialmedialink VARCHAR(255),
     description VARCHAR(255),
+    profilePicPath VARCHAR(255),
     password VARCHAR(255)
 );
 
@@ -35,10 +36,10 @@ CREATE TABLE Song (
     FOREIGN KEY (album_id) REFERENCES Album(id)
 );
 
-INSERT INTO Creator (fullname, username, email, country, birthdate, socialmedialink, description, password) VALUES
-('John Doe', 'johndoe', 'johndoe@example.com', 'USA', '1980-01-01', 'link', 'desc', 'password123'),
-('Jane Smith', 'janesmith', 'jane@example.com', 'UK', '1985-05-15', 'link', 'desc', 'pass456'),
-('Alice Johnson', 'alicej', 'alice@example.com', 'Canada', '1990-07-22', 'link', 'desc', 'alicepass789');
+INSERT INTO Creator (fullname, username, email, country, birthdate, socialmedialink, description, profilePicPath, password) VALUES
+('John Doe', 'johndoe', 'johndoe@example.com', 'USA', '1980-01-01', 'link', 'desc', 'path' ,'password123'),
+('Jane Smith', 'janesmith', 'jane@example.com', 'UK', '1985-05-15', 'link', 'desc', 'path', 'pass456'),
+('Alice Johnson', 'alicej', 'alice@example.com', 'Canada', '1990-07-22', 'link', 'desc', 'path', 'alicepass789');
 
 INSERT INTO Album (title, releasedate, genre, photourl, creator_id) VALUES
 ('Sunset Boulevard', '2021-06-01', 'Pop', 'http://example.com/photo1.jpg', 1),
