@@ -11,6 +11,8 @@ CREATE TABLE Creator (
     email VARCHAR(255) UNIQUE,
     country VARCHAR(255),
     birthdate VARCHAR(255),
+    socialmedialink VARCHAR(255),
+    description VARCHAR(255),
     password VARCHAR(255)
 );
 

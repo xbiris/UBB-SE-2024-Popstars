@@ -13,7 +13,7 @@ namespace SE_project
 		public AlbumRepo()
 		{ 
 			string connectionString = 
-				ConfigurationLoaderFactory.GetConfigurationLoader("C:\\General\\Facultate\\ISS\\SE_project\\SE_project\\appconfig.json").
+				ConfigurationLoaderFactory.GetConfigurationLoader("D:\\visual studio\\iss\\UBB-SE-2024-Popstars\\SE_project\\appconfig.json").
 				GetValue<string>("DatabaseConnection"); ;
 			connection = new SqlConnection(connectionString);
 		}

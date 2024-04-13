@@ -12,14 +12,14 @@ namespace SE_project
 		public CreatorRepo()
 		{
 			string connectionString =
-				ConfigurationLoaderFactory.GetConfigurationLoader("C:\\General\\Facultate\\ISS\\SE_project\\SE_project\\appconfig.json").
+				ConfigurationLoaderFactory.GetConfigurationLoader("D:\\visual studio\\iss\\UBB-SE-2024-Popstars\\SE_project\\appconfig.json").
 				GetValue<string>("DatabaseConnection"); ;
 			connection = new SqlConnection(connectionString);
 		}
 
 		public void AddCreator(Creator creator)
 		{
-			string query = "INSERT INTO Creator (fullname, username, email, country, birthdate, password) VALUES (@FullName, @Username, @Email, @Country, @Birthdate, @Password)";
+			string query = "INSERT INTO Creator (fullname, username, email, country, birthdate, password, socialmedialink, description) VALUES (@FullName, @Username, @Email, @Country, @Birthdate, @Password, @SocialMediaLink, @Description)";
 			SqlCommand command = new SqlCommand(query, connection);
 
 			command.Parameters.AddWithValue("@FullName", creator.fullname);
@@ -27,9 +27,11 @@ namespace SE_project
 			command.Parameters.AddWithValue("@Email", creator.email);
 			command.Parameters.AddWithValue("@Country", creator.country);
 			command.Parameters.AddWithValue("@Birthdate", creator.birthday);
-			command.Parameters.AddWithValue("@Password", "hashed_password"); 
+			command.Parameters.AddWithValue("@Password", "hashed_password");
+            command.Parameters.AddWithValue("@SocialMediaLink", creator.socialmedialink);
+            command.Parameters.AddWithValue("@Description", creator.description);
 
-			try
+            try
 			{
 				connection.Open();
 				command.ExecuteNonQuery();
@@ -60,7 +62,7 @@ namespace SE_project
 
 		public Creator GetCreatorById(int creatorId)
 		{
-			string query = "SELECT id, username, fullname, email, country, birthdate FROM Creator WHERE id = @Id";
+			string query = "SELECT id, username, fullname, email, country, birthdate, socialmedialink, description FROM Creator WHERE id = @Id";
 			SqlCommand command = new SqlCommand(query, connection);
 			command.Parameters.AddWithValue("@Id", creatorId);
 
@@ -75,8 +77,10 @@ namespace SE_project
 						reader["fullname"].ToString(),
 						reader["email"].ToString(),
 						reader["country"].ToString(),
-						reader["birthdate"].ToString()
-					);
+						reader["birthdate"].ToString(),
+						reader["socialemedialink"].ToString(),
+						reader["description"].ToString()
+                    );
 				}
 				return null;
 			}
