@@ -16,9 +16,8 @@ namespace SE_project
 		public string country { get; set; }
 		public string birthday { get; set; }
 
-		public Creator(int id, string username, string fullname, string email, string country, string birthday)
+		public Creator(string username, string fullname, string email, string country, string birthday)
 		{
-			this.id = id;
 			this.username = username;
 			this.fullname = fullname;
 			this.email = email;

@@ -13,8 +13,7 @@ namespace SE_project
 		public int length { get; set; }
 		public string songUrl { get; set; }
 
-		public Song(int id, string title, string songUrl) {
-			this.id = id;
+		public Song(string title, string songUrl) {
 			this.title = title;
 			this.songUrl = songUrl;
 		}
