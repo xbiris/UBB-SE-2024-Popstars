@@ -6,14 +6,14 @@ using System.Configuration;
 
 namespace SE_project
 {
-	internal class AlbumRepo : Repo
+	public class AlbumRepo
 	{
 		private SqlConnection connection;
 
 		public AlbumRepo()
 		{ 
 			string connectionString = 
-				ConfigurationLoaderFactory.GetConfigurationLoader("D:\\visual studio\\iss\\UBB-SE-2024-Popstars\\SE_project\\appconfig.json").
+				ConfigurationLoaderFactory.GetConfigurationLoader("appconfig.json").
 				GetValue<string>("DatabaseConnection"); ;
 			connection = new SqlConnection(connectionString);
 		}

@@ -1,4 +1,7 @@
 ﻿using System.Windows;
+using Microsoft.Data.SqlClient;
+using SE_project.Presentation;
+using SE_project.Services;
 
 namespace SE_project
 {
@@ -7,19 +10,13 @@ namespace SE_project
 		public MainWindow()
 		{
 			InitializeComponent();
+			PresentationSpotify presentation = new PresentationSpotify();
+			presentation.AddCreator("123", "123", "123@example.com", "USA", "1980-05-15", "http://twitter.com/johndoe", "An enthusiastic music producer", "pass");
 
-			AlbumRepo albumRepo = new AlbumRepo();
-			List<Song> songs = new List<Song>();
-			songs.Add(new Song("piesa", "url"));
-			songs.Add(new Song("piesa1", "url"));
-			Album album = new Album("test", "release", "pop", "url", songs);
+			presentation.AddAlbum("Summer Vibes", "2023-07-01", "Pop", "http://example.com/photo.jpg", 1); 
 
-			albumRepo.AddAlbum(album, 1);
+			presentation.AddSong("Beach Party", "http://example.com/song.mp3", 1);
 
-			outputTextBlock.Text = "Album added successfully!";
-
-			Album album1 = albumRepo.GetAlbumById(1);
-			outputTextBlock.Text = album1.title;
 		}
 	}
 }

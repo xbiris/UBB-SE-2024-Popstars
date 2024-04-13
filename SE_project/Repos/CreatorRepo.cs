@@ -5,21 +5,21 @@ using System.Configuration;
 
 namespace SE_project
 {
-	internal class CreatorRepo : Repo
+	public class CreatorRepo
 	{
 		private SqlConnection connection;
 
 		public CreatorRepo()
 		{
 			string connectionString =
-				ConfigurationLoaderFactory.GetConfigurationLoader("D:\\visual studio\\iss\\UBB-SE-2024-Popstars\\SE_project\\appconfig.json").
+				ConfigurationLoaderFactory.GetConfigurationLoader("appconfig.json").
 				GetValue<string>("DatabaseConnection"); ;
 			connection = new SqlConnection(connectionString);
 		}
 
-		public void AddCreator(Creator creator)
+		public void AddCreator(Creator creator, string hashedPass)
 		{
-			string query = "INSERT INTO Creator (fullname, username, email, country, birthdate, password, socialmedialink, description) VALUES (@FullName, @Username, @Email, @Country, @Birthdate, @Password, @SocialMediaLink, @Description)";
+			string query = "INSERT INTO Creator (fullname, username, email, country, birthdate, socialmedialink, description, password) VALUES (@FullName, @Username, @Email, @Country, @Birthdate, @SocialMediaLink, @Description, @Password)";
 			SqlCommand command = new SqlCommand(query, connection);
 
 			command.Parameters.AddWithValue("@FullName", creator.fullname);
@@ -27,11 +27,11 @@ namespace SE_project
 			command.Parameters.AddWithValue("@Email", creator.email);
 			command.Parameters.AddWithValue("@Country", creator.country);
 			command.Parameters.AddWithValue("@Birthdate", creator.birthday);
-			command.Parameters.AddWithValue("@Password", "hashed_password");
             command.Parameters.AddWithValue("@SocialMediaLink", creator.socialmedialink);
             command.Parameters.AddWithValue("@Description", creator.description);
-
-            try
+			command.Parameters.AddWithValue("@Password", hashedPass);
+			
+			try
 			{
 				connection.Open();
 				command.ExecuteNonQuery();

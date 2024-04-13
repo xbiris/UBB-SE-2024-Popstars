@@ -35,10 +35,10 @@ CREATE TABLE Song (
     FOREIGN KEY (album_id) REFERENCES Album(id)
 );
 
-INSERT INTO Creator (fullname, username, email, country, birthdate, password) VALUES
-('John Doe', 'johndoe', 'johndoe@example.com', 'USA', '1980-01-01', 'password123'),
-('Jane Smith', 'janesmith', 'jane@example.com', 'UK', '1985-05-15', 'pass456'),
-('Alice Johnson', 'alicej', 'alice@example.com', 'Canada', '1990-07-22', 'alicepass789');
+INSERT INTO Creator (fullname, username, email, country, birthdate, socialmedialink, description, password) VALUES
+('John Doe', 'johndoe', 'johndoe@example.com', 'USA', '1980-01-01', 'link', 'desc', 'password123'),
+('Jane Smith', 'janesmith', 'jane@example.com', 'UK', '1985-05-15', 'link', 'desc', 'pass456'),
+('Alice Johnson', 'alicej', 'alice@example.com', 'Canada', '1990-07-22', 'link', 'desc', 'alicepass789');
 
 INSERT INTO Album (title, releasedate, genre, photourl, creator_id) VALUES
 ('Sunset Boulevard', '2021-06-01', 'Pop', 'http://example.com/photo1.jpg', 1),

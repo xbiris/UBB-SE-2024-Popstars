@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SE_project
 {
-	internal class Creator : IUser
+	public class Creator : IUser
 	{
 		public int id { get; set; }
 		public string username { get; set; }

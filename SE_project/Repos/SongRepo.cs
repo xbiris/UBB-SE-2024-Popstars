@@ -6,21 +6,21 @@ using System.Configuration;
 
 namespace SE_project
 {
-	internal class SongRepo : Repo
+	public class SongRepo
 	{
 		private SqlConnection connection;
 
 		public SongRepo()
 		{
 			string connectionString =
-				ConfigurationLoaderFactory.GetConfigurationLoader("D:\\visual studio\\iss\\UBB-SE-2024-Popstars\\SE_project\\appconfig.json").
+				ConfigurationLoaderFactory.GetConfigurationLoader("appconfig.json").
 				GetValue<string>("DatabaseConnection"); ;
 			connection = new SqlConnection(connectionString);
 		}
 
 		public void AddSong(Song song, int albumId)
 		{
-			string query = "INSERT INTO Song (title, length, songUrl, album_id) VALUES (@Title, @Length, @SongUrl, @AlbumId)";
+			string query = "INSERT INTO Song (title, song_length, songUrl, album_id) VALUES (@Title, @Length, @SongUrl, @AlbumId)";
 			SqlCommand command = new SqlCommand(query, connection);
 
 			command.Parameters.AddWithValue("@Title", song.title);
