@@ -33,8 +33,13 @@ CREATE TABLE Song (
     song_length INT, 
     songUrl VARCHAR(255),
     album_id INT,
+    no_streams INT DEFAULT 0,
+    no_shares INT DEFAULT 0,
+    no_saves INT DEFAULT 0,
+    no_playlists INT DEFAULT 0,
     FOREIGN KEY (album_id) REFERENCES Album(id)
 );
+
 
 INSERT INTO Creator (fullname, username, email, country, birthdate, socialmedialink, description, profilePicPath, password) VALUES
 ('John Doe', 'johndoe', 'johndoe@example.com', 'USA', '1980-01-01', 'link', 'desc', 'path' ,'password123'),
