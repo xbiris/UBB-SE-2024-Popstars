@@ -12,21 +12,19 @@ namespace YourNamespace
 
 	public partial class MainWindow : Window
 	{
+        PresentationSpotify presentation;
 		public MainWindow()
-		{
-			InitializeComponent();
-
-			wpfui.MainWindow mainWindow = new wpfui.MainWindow();
-
-			mainWindow.Show();
-
-			PresentationSpotify presentation = new PresentationSpotify();
-
-        public MainWindow()
         {
             InitializeComponent();
-             presentation = new PresentationSpotify();
-        }
+
+            wpfui.MainWindow mainWindow = new wpfui.MainWindow();
+
+            mainWindow.Show();
+
+            PresentationSpotify presentation = new PresentationSpotify();
+
+			this.Hide();
+		}
 
         private void SelectFile_Click(object sender, RoutedEventArgs e)
         {
@@ -65,12 +63,7 @@ namespace YourNamespace
         }
 
             
-        }
-
-
     }
-			this.Hide();
 
-		}
-	}
+
 }
