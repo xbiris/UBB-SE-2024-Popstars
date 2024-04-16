@@ -5,8 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SE_project.UI"
         mc:Ignorable="d"
-        Title="UploadAlbum" Height="450" Width="800">
-    <Grid>
-        
+        Title="UploadAlbum" 
+        Width="800"
+        Height="450"
+        SizeToContent="WidthAndHeight"
+        WindowState="Maximized">
+
+    <Grid Background="Black">
+        <Border BorderBrush="White" BorderThickness="2" HorizontalAlignment="Left" Height="144" Margin="26,27,0,0" VerticalAlignment="Top" Width="156">
+            <Image/>
+        </Border>
+
+        <TextBox x:Name="TitleTextBox" HorizontalAlignment="Left" Height="24" Margin="132,212,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193" Text="Title"/>
+        <TextBox x:Name="ReleaseDateTextBox" HorizontalAlignment="Left" Height="24" Margin="132,256,0,0" TextWrapping="Wrap" Text="Release Date " VerticalAlignment="Top" Width="193" RenderTransformOrigin="0.037,1.43"/>
+        <TextBox x:Name="GenreTextBox" HorizontalAlignment="Left" Height="24" Margin="132,300,0,0" TextWrapping="Wrap" Text="Genre" VerticalAlignment="Top" Width="193" TextChanged="TextBox_TextChanged"/>
+
+        <Label Content="Title: " Foreground="White" HorizontalAlignment="Left" Height="23" Margin="26,217,0,0" VerticalAlignment="Top" Width="78"/>
+        <Label Content="Release Date: " Foreground="White" HorizontalAlignment="Left" Height="24" Margin="26,256,0,0" VerticalAlignment="Top" Width="78"/>
+        <Label Content="Genre: " Foreground="White" HorizontalAlignment="Left" Height="24" Margin="26,300,0,0" VerticalAlignment="Top" Width="75"/>
+
+        <Button x:Name="BackButton" Content="Back" Click="Back_Click" Foreground="MediumPurple" Background="Black" HorizontalAlignment="Left" Height="23" Margin="727,27,0,0" VerticalAlignment="Top" Width="52" RenderTransformOrigin="0.367,0.416"/>
+        <Button x:Name="ChooseCoverButton" Content="Choose cover file" Click="ChooseCover_Click" Foreground="MediumPurple" Background="White" HorizontalAlignment="Left" Height="29" Margin="526,210,0,0" VerticalAlignment="Top" Width="114"/>
+        <Button x:Name="UploadAlbumButton" Content="Upload Album " Click="UploadAlbum_Click" FontSize="16" Background="MediumPurple" Foreground="White" HorizontalAlignment="Left" Height="35" Margin="658,358,0,0" VerticalAlignment="Top" Width="108"/>
+
+        <Label Content="Upload Album " Foreground="White" FontSize="27" HorizontalAlignment="Left" Height="44" Margin="209,38,0,0" VerticalAlignment="Top" Width="215"/>
+        <Label Content="Song Title:" Foreground="White" HorizontalAlignment="Left" Height="35" Margin="419,256,0,0" VerticalAlignment="Top" Width="78" RenderTransformOrigin="0.518,1.798"/>
+        <TextBox x:Name="SongTitleTextBox" HorizontalAlignment="Left" Height="24" Margin="526,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="192"/>
+        <Button x:Name="AddSongButton" Content="Add song" Click="AddSong_Click" Foreground="MediumPurple" Background="Black" HorizontalAlignment="Left" Height="28" Margin="419,344,0,0" VerticalAlignment="Top" Width="114"/>
+        <Button x:Name="ChooseSongButton" Content="Choose song file"  Click="ChooseSong_Click" Foreground="MediumPurple" Background="White" HorizontalAlignment="Left" Height="29" Margin="526,292,0,0" VerticalAlignment="Top" Width="114" RenderTransformOrigin="0.501,1.866" />
+
+        <Label Content="Song file:" Foreground="White" HorizontalAlignment="Left" Height="35" Margin="419,294,0,0" VerticalAlignment="Top" Width="78"/>
+        <Label Content="Album Cover" Foreground="White" HorizontalAlignment="Left" Height="35" Margin="419,217,0,0" VerticalAlignment="Top" Width="78" RenderTransformOrigin="0.518,1.798"/>
     </Grid>
 </Window>
