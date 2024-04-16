@@ -18,15 +18,14 @@ namespace SE_project
 			connection = new SqlConnection(connectionString);
 		}
 
-		public void AddSong(Song song, int albumId)
+		public void AddSong(Song song, string filePath)
 		{
-			string query = "INSERT INTO Song (title, song_length, songUrl, album_id) VALUES (@Title, @Length, @SongUrl, @AlbumId)";
+			string query = "INSERT INTO Song (title, song_length, songUrl) VALUES (@Title, @Length, @SongUrl)";
 			SqlCommand command = new SqlCommand(query, connection);
 
 			command.Parameters.AddWithValue("@Title", song.title);
 			command.Parameters.AddWithValue("@Length", song.length);
-			command.Parameters.AddWithValue("@SongUrl", song.songUrl);
-			command.Parameters.AddWithValue("@AlbumId", albumId);
+			command.Parameters.AddWithValue("@SongUrl", filePath);
 
 			try
 			{
@@ -59,9 +58,59 @@ namespace SE_project
 
 		public Song GetSongById(int songId)
 		{
-			string query = "SELECT id, title, length, songUrl FROM Song WHERE id = @Id";
+			string query = "SELECT id, title, songUrl FROM Song WHERE id = @Id";
 			SqlCommand command = new SqlCommand(query, connection);
 			command.Parameters.AddWithValue("@Id", songId);
+
+			try
+			{
+				connection.Open();
+				SqlDataReader reader = command.ExecuteReader();
+				if (reader.Read())
+				{
+					return new Song(
+						reader["title"].ToString(),
+						reader["songUrl"].ToString()
+					);
+				}
+				return null;
+			}
+			finally
+			{
+				connection.Close();
+			}
+		}
+
+		public Song getSongByTitle(String title)
+		{
+			string query = "SELECT id, title, songUrl FROM Song WHERE title = @Title";
+			SqlCommand command = new SqlCommand(query, connection);
+			command.Parameters.AddWithValue("@Title", title);
+
+			try
+			{
+				connection.Open();
+				SqlDataReader reader = command.ExecuteReader();
+				if (reader.Read())
+				{
+					return new Song(
+						reader["title"].ToString(),
+						reader["songUrl"].ToString()
+					);
+				}
+				return null;
+			}
+			finally
+			{
+				connection.Close();
+			}
+		}
+
+		public Song GetSongByUrl(String songPath)
+		{
+			string query = "SELECT id, title, songUrl FROM Song WHERE songUrl = @songUrl";
+			SqlCommand command = new SqlCommand(query, connection);
+			command.Parameters.AddWithValue("@songUrl", songPath);
 
 			try
 			{

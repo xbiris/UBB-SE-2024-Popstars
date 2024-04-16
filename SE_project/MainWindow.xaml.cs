@@ -1,12 +1,15 @@
-﻿using System.Windows;
-using System.Windows.Media.Imaging;
-using Microsoft.Data.SqlClient;
+﻿using SE_project.Services; // Import your SongService
+using Microsoft.Win32; // Import OpenFileDialog if not already imported
+using System;
+using System.IO;
+using System.Windows;
 using SE_project.Presentation;
 using SE_project.Services;
 using wpfui;
 
-namespace SE_project
+namespace YourNamespace
 {
+
 	public partial class MainWindow : Window
 	{
 		public MainWindow()
@@ -19,16 +22,53 @@ namespace SE_project
 
 			PresentationSpotify presentation = new PresentationSpotify();
 
-			string profilePictureUri = "photo123.jpg";
-			Uri imageUri = new Uri(profilePictureUri, UriKind.Relative);
-			BitmapImage imageBitmap = new BitmapImage(imageUri);
+        public MainWindow()
+        {
+            InitializeComponent();
+             presentation = new PresentationSpotify();
+        }
 
-			presentation.AddCreator("123", "123", "123@example.com", "USA", "1980-05-15", "http://twitter.com/johndoe", "An enthusiastic music producer", profilePictureUri, "pass");
+        private void SelectFile_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true)
+            {
+                string filePath = openFileDialog.FileName;
+                FilePathTextBox.Text = filePath;
+            }
+        }
 
-			presentation.AddAlbum("Summer Vibes", "2023-07-01", "Pop", "http://example.com/photo.jpg", 1); 
+        private void Upload_Click(object sender, RoutedEventArgs e)
+        {
+            string songName = SongNameTextBox.Text; 
+            string filePath = FilePathTextBox.Text;
 
-			presentation.AddSong("Beach Party", "http://example.com/song.mp3", 1);
+            if (filePath.Length > 0)
+            {
+                try
+                {
+                    presentation.AddSong(songName, filePath); // Assuming AddSong method only requires song name and file path
+                    MessageBox.Show("Song uploaded successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                catch (ArgumentException ex)
+                {
+                    MessageBox.Show($"Error uploading song: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An unexpected error occurred: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            } else
+            {
+                MessageBox.Show("Please upload a file");
+            }
+        }
 
+            
+        }
+
+
+    }
 			this.Hide();
 
 		}

@@ -1,6 +1,8 @@
 ﻿using System;
 using SE_project;
 using SE_project.Services;
+using System.Windows;
+using System.Windows.Forms;
 
 namespace SE_project.Presentation
 {
@@ -30,16 +32,17 @@ namespace SE_project.Presentation
 			}
 		}
 
-		public void AddSong(string title, string songUrl, int albumId)
+		public void AddSong(string title, string songUrl)
 		{
 			try
 			{
-				_songService.AddSong(title, songUrl, albumId);
+				_songService.AddSong(title, songUrl);
 				Console.WriteLine("Song added successfully.");
 			}
 			catch (Exception ex)
 			{
-				Console.WriteLine($"Error adding song: {ex.Message}");
+				//Console.WriteLine($"Error adding song: {ex.Message}");
+				throw ex;
 			}
 		}
 
@@ -55,5 +58,17 @@ namespace SE_project.Presentation
 				Console.WriteLine($"Error adding album: {ex.Message}");
 			}
 		}
+
+
+		private void SelectFile_Click(object sender, RoutedEventArgs e)
+		{
+			OpenFileDialog openFileDialog = new OpenFileDialog();
+			if (openFileDialog.ShowDialog() == DialogResult.OK)
+			{
+				String selectedFilePath = openFileDialog.FileName;
+			}
+		}
+
+
 	}
 }
