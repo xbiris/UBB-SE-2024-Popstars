@@ -1,5 +1,5 @@
-﻿using SE_project.Services; // Import your SongService
-using Microsoft.Win32; // Import OpenFileDialog if not already imported
+﻿using SE_project.Services; 
+using Microsoft.Win32; 
 using System;
 using System.IO;
 using System.Windows;
@@ -45,7 +45,7 @@ namespace YourNamespace
             {
                 try
                 {
-                    presentation.AddSong(songName, filePath); // Assuming AddSong method only requires song name and file path
+                    presentation.AddSong(songName, filePath);
                     MessageBox.Show("Song uploaded successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 catch (ArgumentException ex)
