@@ -9,8 +9,8 @@ namespace SE_project.Presentation
 	public class PresentationSpotify
 	{
 		private CreatorService _creatorService;
-		private SongService _songService;
-		private AlbumService _albumService;
+		public SongService _songService;
+		public AlbumService _albumService;
 
 		public PresentationSpotify()
 		{

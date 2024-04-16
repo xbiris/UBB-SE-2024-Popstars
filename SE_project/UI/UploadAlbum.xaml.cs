@@ -25,6 +25,7 @@ namespace SE_project.UI
         private string Path;
         private string CoverPath;
         private PresentationSpotify presentation;
+
         public UploadAlbum()
 		{
 			InitializeComponent();
@@ -36,12 +37,13 @@ namespace SE_project.UI
         {
 			
         }
+
         private void AddSong_Click(object sender, RoutedEventArgs e)
         {
-          
             presentation.AddSongToList(SongTitleTextBox.Text, Path);
 
-        }
+			MessageBox.Show("Song chosen: " + Path);
+		}
 
         private void ChooseSong_Click(object sender, RoutedEventArgs e)
         {
@@ -65,8 +67,9 @@ namespace SE_project.UI
 
         private void UploadAlbum_Click(object sender, RoutedEventArgs e)
         {
-            presentation.AddAlbum(TitleTextBox.Text, ReleaseDateTextBox.Text, GenreTextBox.Text, CoverPath, 1); ;
-        }
+            presentation.AddAlbum(TitleTextBox.Text, ReleaseDateTextBox.Text, GenreTextBox.Text, CoverPath, 1);
+			MessageBox.Show("Album Uploaded");
+		}
 
         private void Back_Click(object sender, RoutedEventArgs e)
         {
