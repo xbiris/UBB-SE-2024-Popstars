@@ -24,5 +24,34 @@ namespace SE_project.UI
 			InitializeComponent();
 			WindowState = WindowState.Maximized;
 		}
-	}
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+			
+        }
+        private void AddSong_Click(object sender, RoutedEventArgs e)
+        {
+           
+        }
+
+        private void ChooseSong_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ChooseCover_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void UploadAlbum_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+    }
 }
