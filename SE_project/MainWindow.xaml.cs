@@ -3,6 +3,7 @@ using System.Windows.Media.Imaging;
 using Microsoft.Data.SqlClient;
 using SE_project.Presentation;
 using SE_project.Services;
+using wpfui;
 
 namespace SE_project
 {
@@ -11,6 +12,11 @@ namespace SE_project
 		public MainWindow()
 		{
 			InitializeComponent();
+
+			wpfui.MainWindow mainWindow = new wpfui.MainWindow();
+
+			mainWindow.Show();
+
 			PresentationSpotify presentation = new PresentationSpotify();
 
 			string profilePictureUri = "photo123.jpg";
@@ -22,6 +28,8 @@ namespace SE_project
 			presentation.AddAlbum("Summer Vibes", "2023-07-01", "Pop", "http://example.com/photo.jpg", 1); 
 
 			presentation.AddSong("Beach Party", "http://example.com/song.mp3", 1);
+
+			this.Hide();
 
 		}
 	}
