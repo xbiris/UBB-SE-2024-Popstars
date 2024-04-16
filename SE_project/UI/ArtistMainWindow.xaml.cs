@@ -20,6 +20,7 @@ namespace wpfui
         {
             InitializeComponent();
             MainFrame.NavigationUIVisibility = NavigationUIVisibility.Hidden;
+            WindowState = WindowState.Maximized;
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -29,7 +30,9 @@ namespace wpfui
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            SE_project.UI.Statistics statisticsWindow = new SE_project.UI.Statistics();
+            
+            statisticsWindow.Show();    
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -42,7 +45,9 @@ namespace wpfui
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
+            SE_project.UI.UploadAlbum uploadAlbumWindow = new SE_project.UI.UploadAlbum();
 
+            uploadAlbumWindow.Show();
         }
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
