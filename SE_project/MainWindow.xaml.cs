@@ -17,6 +17,7 @@ namespace YourNamespace
         {
             InitializeComponent();
 
+
             wpfui.MainWindow mainWindow = new wpfui.MainWindow();
 
             mainWindow.Show();
