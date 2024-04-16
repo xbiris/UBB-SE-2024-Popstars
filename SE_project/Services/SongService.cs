@@ -34,7 +34,7 @@ namespace SE_project.Services
             }
  
 			var song = new Song(title, filePath);
-			_songRepo.AddSong(song, filePath);
+			_songRepo.AddSong(song);
 		}
 
 		private bool IsValidAudioFile(string filePath)

@@ -32,6 +32,19 @@ namespace SE_project.Presentation
 			}
 		}
 
+		public void AddSongToList(string title, string songUrl) {
+			try
+			{
+				_albumService.AddSongToList(title, songUrl);
+				Console.WriteLine("Song added successfully.");
+			}
+			catch (Exception ex)
+			{
+				//Console.WriteLine($"Error adding song: {ex.Message}");
+				throw ex;
+			}
+		}
+
 		public void AddSong(string title, string songUrl)
 		{
 			try

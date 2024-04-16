@@ -18,14 +18,15 @@ namespace SE_project
 			connection = new SqlConnection(connectionString);
 		}
 
-		public void AddSong(Song song, string filePath)
+		public void AddSong(Song song)
 		{
-			string query = "INSERT INTO Song (title, song_length, songUrl) VALUES (@Title, @Length, @SongUrl)";
+			string query = "INSERT INTO Song (title, song_length, songUrl, album_id) VALUES (@Title, @Length, @SongUrl, @AlbumId)";
 			SqlCommand command = new SqlCommand(query, connection);
 
 			command.Parameters.AddWithValue("@Title", song.title);
 			command.Parameters.AddWithValue("@Length", song.length);
-			command.Parameters.AddWithValue("@SongUrl", filePath);
+			command.Parameters.AddWithValue("@SongUrl", song.songUrl);
+			command.Parameters.AddWithValue("@AlbumId", song.albumId);
 
 			try
 			{

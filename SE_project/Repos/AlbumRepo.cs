@@ -18,9 +18,9 @@ namespace SE_project
 			connection = new SqlConnection(connectionString);
 		}
 
-		public void AddAlbum(Album album, int creatorId)
+		public int AddAlbum(Album album, int creatorId)
 		{
-			string query = "INSERT INTO Album (title, releasedate, genre, photourl, creator_id) VALUES (@Title, @ReleaseDate, @Genre, @PhotoUrl, @CreatorId)";
+			string query = "INSERT INTO Album (title, releasedate, genre, photourl, creator_id) VALUES (@Title, @ReleaseDate, @Genre, @PhotoUrl, @CreatorId); SELECT SCOPE_IDENTITY();";
 			SqlCommand command = new SqlCommand(query, connection);
 
 			command.Parameters.AddWithValue("@Title", album.title);
@@ -28,21 +28,24 @@ namespace SE_project
 			command.Parameters.AddWithValue("@Genre", album.genre);
 			command.Parameters.AddWithValue("@PhotoUrl", album.photoUrl);
 			command.Parameters.AddWithValue("@CreatorId", creatorId);
-			
+
 			try
 			{
 				connection.Open();
-				command.ExecuteNonQuery();
+				int newAlbumId = Convert.ToInt32(command.ExecuteScalar());
+				return newAlbumId; 
 			}
 			catch (Exception ex)
 			{
 				Console.WriteLine(ex.Message);
+				return -1;
 			}
 			finally
 			{
 				connection.Close();
 			}
 		}
+
 
 		public Album GetAlbumById(int albumId)
 		{
