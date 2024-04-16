@@ -24,6 +24,18 @@ namespace YourNamespace
             PresentationSpotify presentation = new PresentationSpotify();
 
 			this.Hide();
+
+			/*
+             In the UI, when clicking the add song button while creating an album, call the function AddSongToList.
+             When done with adding songs and details for album, call AddAlbum.
+             Example below:
+            */
+			presentation.AddSongToList("billiejean", "billiejean.mp3");
+            presentation.AddSongToList("billiejean1", "billiejean1.mp3");
+            presentation.AddSongToList("billiejean2", "billiejean2.mp3");
+            presentation.AddSongToList("billiejean3", "billiejean3.mp3");
+
+            presentation.AddAlbum("albumtare", "112001", "pop", "photourl", 1);
 		}
 
         private void SelectFile_Click(object sender, RoutedEventArgs e)
