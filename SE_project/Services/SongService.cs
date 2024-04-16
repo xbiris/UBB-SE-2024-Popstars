@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using System.Windows;
 
 namespace SE_project.Services
 {
@@ -27,12 +28,6 @@ namespace SE_project.Services
             {
 				throw new ArgumentException("Please enter a title");
 			}
-
-			if (_songRepo.GetSongByUrl(filePath) != null || _songRepo.getSongByTitle(title) != null)
-            {
-				throw new ArgumentException("This song already exists");
-            }
- 
 			var song = new Song(title, filePath);
 			_songRepo.AddSong(song);
 		}

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using Microsoft.Data.SqlClient;
 using System.Configuration;
+using System.Windows;
 
 namespace SE_project
 {
@@ -20,6 +21,7 @@ namespace SE_project
 
 		public void AddSong(Song song)
 		{
+			MessageBox.Show("service " + song.title);
 			string query = "INSERT INTO Song (title, song_length, songUrl, album_id) VALUES (@Title, @Length, @SongUrl, @AlbumId)";
 			SqlCommand command = new SqlCommand(query, connection);
 

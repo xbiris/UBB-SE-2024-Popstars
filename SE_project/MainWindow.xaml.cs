@@ -22,7 +22,7 @@ namespace YourNamespace
 
             mainWindow.Show();
 
-            PresentationSpotify presentation = new PresentationSpotify();
+            //PresentationSpotify presentation = new PresentationSpotify();
 
 			this.Hide();
 
@@ -31,12 +31,10 @@ namespace YourNamespace
              When done with adding songs and details for album, call AddAlbum.
              Example below:
             */
-			presentation.AddSongToList("billiejean", "billiejean.mp3");
-            presentation.AddSongToList("billiejean1", "billiejean1.mp3");
-            presentation.AddSongToList("billiejean2", "billiejean2.mp3");
-            presentation.AddSongToList("billiejean3", "billiejean3.mp3");
+            /*
+			presentation.AddSongToList("432432432", "42332423.mp3");
 
-            presentation.AddAlbum("albumtare", "112001", "pop", "photourl", 1);
+            presentation.AddAlbum("albumtare3", "112001", "pop", "photourl", 1);*/
 		}
 
         private void SelectFile_Click(object sender, RoutedEventArgs e)
