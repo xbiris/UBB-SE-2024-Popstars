@@ -4,12 +4,23 @@ using System;
 using System.IO;
 using System.Windows;
 using SE_project.Presentation;
+using SE_project.Services;
+using wpfui;
 
 namespace YourNamespace
 {
-    public partial class MainWindow : Window
-    {
-        private readonly PresentationSpotify presentation;
+
+	public partial class MainWindow : Window
+	{
+		public MainWindow()
+		{
+			InitializeComponent();
+
+			wpfui.MainWindow mainWindow = new wpfui.MainWindow();
+
+			mainWindow.Show();
+
+			PresentationSpotify presentation = new PresentationSpotify();
 
         public MainWindow()
         {
@@ -58,4 +69,8 @@ namespace YourNamespace
 
 
     }
+			this.Hide();
 
+		}
+	}
+}
