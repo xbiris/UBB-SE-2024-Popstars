@@ -17,7 +17,9 @@ namespace SE_project.Presentation
 			_albumService = new AlbumService();
 		}
 
-		public void AddCreator(string fullname, string username, string email, string country, string birthday, string socialMediaLink, string description, string profilePicPath, string hashedPass)
+		
+
+        public void AddCreator(string fullname, string username, string email, string country, string birthday, string socialMediaLink, string description, string profilePicPath, string hashedPass)
 		{
 			try
 			{

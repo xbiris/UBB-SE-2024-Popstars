@@ -53,5 +53,9 @@ namespace SE_project.UI
             NoSaves.Text = totalSaves.ToString();
         }
 
+        private void NoShares_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
