@@ -81,6 +81,7 @@ namespace SE_project
 				connection.Close();
 			}
 		}
+		
 
 		public List<Song> GetSongsFromAlbum(int albumId)
 		{
@@ -106,6 +107,7 @@ namespace SE_project
 			{
 				connection.Close();
 			}
+
 		}
 	}
 }

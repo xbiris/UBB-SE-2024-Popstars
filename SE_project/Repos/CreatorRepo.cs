@@ -30,10 +30,10 @@ namespace SE_project
 			command.Parameters.AddWithValue("@Country", creator.country);
 			command.Parameters.AddWithValue("@Birthdate", creator.birthday);
 			command.Parameters.AddWithValue("@SocialMediaLink", creator.socialmedialink);
-            command.Parameters.AddWithValue("@Description", creator.description);
-            command.Parameters.AddWithValue("@ProfilePicPath", creator.profilePicPath);
+			command.Parameters.AddWithValue("@Description", creator.description);
+			command.Parameters.AddWithValue("@ProfilePicPath", creator.profilePicPath);
 			command.Parameters.AddWithValue("@Password", hashedPass);
-			
+
 			try
 			{
 				connection.Open();
@@ -62,6 +62,41 @@ namespace SE_project
 				connection.Close();
 			}
 		}
+
+		public int GetNoOfSavesPerCreator(int creatorId)
+		{
+
+			int totalSaves = 0;
+
+			string query = "SELECT SUM(Song.no_saves) AS total_saves " +
+						   "FROM Album " +
+						   "INNER JOIN Song ON Album.id = Song.album_id " +
+						   "WHERE Album.creator_id = @CreatorId";
+
+			using (SqlCommand command = new SqlCommand(query, connection))
+			{
+				command.Parameters.AddWithValue("@CreatorId", creatorId);
+
+				try
+				{
+					connection.Open();
+					object result = command.ExecuteScalar();
+
+					if (result != DBNull.Value)
+					{
+						totalSaves = Convert.ToInt32(result);
+					}
+				}
+				finally
+				{
+					connection.Close();
+				}
+			}
+
+			return totalSaves;
+		}
+
+	
 
 		public Creator GetCreatorById(int creatorId)
 		{
@@ -93,5 +128,7 @@ namespace SE_project
 				connection.Close();
 			}
 		}
+
+
 	}
 }
