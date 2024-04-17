@@ -24,6 +24,9 @@ namespace SE_project.UI
 			InitializeComponent();
 			WindowState = WindowState.Maximized;
 		}
-
-	}
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+        }
+    }
 }
