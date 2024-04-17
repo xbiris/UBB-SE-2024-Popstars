@@ -20,7 +20,7 @@ namespace SE_project.Services
 			var creator = new Creator(fullname, username, email, country, birthday, socialMediaLink, description, profilePicPath);
 			_creatorRepo.AddCreator(creator, hashedPass);
 		}
-
+	
 		public void DeleteCreator(int creatorId)
 		{
 			Creator creator = _creatorRepo.GetCreatorById(creatorId);
@@ -29,8 +29,13 @@ namespace SE_project.Services
 				_creatorRepo.DeleteCreator(creator);
 			}
 		}
+        public int GetNoOfSavesPerCreator(int creatorId)
+        {
+            
+            return _creatorRepo.GetNoOfSavesPerCreator(creatorId);
+        }
 
-		public Creator GetCreatorById(int creatorId)
+        public Creator GetCreatorById(int creatorId)
 		{
 			return _creatorRepo.GetCreatorById(creatorId);
 		}

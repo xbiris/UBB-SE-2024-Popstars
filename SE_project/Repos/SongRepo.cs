@@ -82,6 +82,7 @@ namespace SE_project
 				connection.Close();
 			}
 		}
+		
 
 		public Song getSongByTitle(String title)
 		{
@@ -157,6 +158,7 @@ namespace SE_project
 			{
 				connection.Close();
 			}
+
 		}
 	}
 }
