@@ -24,5 +24,6 @@ namespace SE_project.UI
 			InitializeComponent();
 			WindowState = WindowState.Maximized;
 		}
+
 	}
 }

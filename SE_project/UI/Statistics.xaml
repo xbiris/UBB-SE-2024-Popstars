@@ -6,7 +6,27 @@
         xmlns:local="clr-namespace:SE_project.UI"
         mc:Ignorable="d"
         Title="Statistics" Height="450" Width="800">
-    <Grid>
-        
+    <Grid Background="Black">
+        <Border BorderBrush="White" BorderThickness="2" HorizontalAlignment="Left" Height="144" Margin="26,27,0,0" VerticalAlignment="Top" Width="156">
+            <Image/>
+        </Border>
+        <Label Content="Statistics " Foreground="White" FontSize="27" HorizontalAlignment="Left" Height="44" Margin="205,27,0,0" VerticalAlignment="Top" Width="215"/>
+
+
+        <Button x:Name="BackButton" Content="Back" Click="Back_Click" Foreground="MediumPurple" Background="Black" HorizontalAlignment="Left" Height="23" Margin="727,27,0,0" VerticalAlignment="Top" Width="52" RenderTransformOrigin="0.367,0.416"/>
+
+
+        <Label Content="Your songs's total number of streams: " Foreground="White" HorizontalAlignment="Left" Height="34" Margin="26,217,0,0" VerticalAlignment="Top" Width="224"/>
+        <Label Content="Your songs's total number of shares: " Foreground="White" HorizontalAlignment="Left" Height="34" Margin="26,256,0,0" VerticalAlignment="Top" Width="224"/>
+        <Label Content="Your songs's total number of saves: " Foreground="White" HorizontalAlignment="Left" Height="34" Margin="26,300,0,0" VerticalAlignment="Top" Width="224"/>
+        <Label Content="Your songs's have been added to this many playlists: " Foreground="White" HorizontalAlignment="Left" Height="34" Margin="26,339,0,0" VerticalAlignment="Top" Width="290"/>
+
+
+        <TextBox  x:Name="NoStreams" HorizontalAlignment="Left" Height="16" Margin="334,226,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="66"/>
+        <TextBox  x:Name="NoShares"  HorizontalAlignment="Left" Height="16" Margin="334,265,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="66"/>
+        <TextBox  x:Name="NoSaves" HorizontalAlignment="Left" Height="16" Margin="334,309,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="66"/>
+        <TextBox  x:Name="NoPlaylists" HorizontalAlignment="Left" Height="16" Margin="334,348,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="66"/>
+
+
     </Grid>
 </Window>
