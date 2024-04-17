@@ -65,6 +65,7 @@ namespace SE_project.UI
             }
         }
 
+
         private void UploadAlbum_Click(object sender, RoutedEventArgs e)
         {
             presentation.AddAlbum(TitleTextBox.Text, ReleaseDateTextBox.Text, GenreTextBox.Text, CoverPath, 1);
