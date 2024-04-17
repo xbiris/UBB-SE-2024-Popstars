@@ -34,6 +34,20 @@ namespace SE_project.Services
             
             return _creatorRepo.GetNoOfSavesPerCreator(creatorId);
         }
+		public int GetNoSharesPerCreator(int creatorId)
+		{
+			return _creatorRepo.GetNoOfSharesPerCreator(creatorId);
+		}
+
+		public int GetNoStreamsPerCreator(int creatorId)
+		{
+			return _creatorRepo.GetNoOfStreamsPerCreator(creatorId);
+		}
+
+		public int GetNoPlaylists(int creatorId)
+		{
+			return _creatorRepo.GetNoOfPlaylistsPerCreator(creatorId);
+		}
 
         public Creator GetCreatorById(int creatorId)
 		{
