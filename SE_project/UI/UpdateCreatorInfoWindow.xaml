@@ -6,21 +6,21 @@
         xmlns:local="clr-namespace:SE_project.UI"
         mc:Ignorable="d"
         Title="UpdateCreatorInfoWindow" Height="450" Width="800">
-    <Grid>
-        <TextBox Name="SocialMediaLinkTextBox" HorizontalAlignment="Left" Margin="327,273,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="328" Height="54"/>
-        <RichTextBox VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Margin="281,159,0,0" VerticalAlignment="Top" Width="374" Height="90" TextChanged="RichTextBox_TextChanged" >
+    <Grid Background="Black">
+        <TextBox Name="SocialMediaLinkTextBox" HorizontalAlignment="Left" Margin="327,286,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="328" Height="28"/>
+        <RichTextBox VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Margin="327,167,0,0" VerticalAlignment="Top" Width="328" Height="92" TextChanged="RichTextBox_TextChanged" >
             <FlowDocument>
                 <Paragraph>
                     <Run Name="DescriptionTextField" Text=""/>
                 </Paragraph>
             </FlowDocument>
         </RichTextBox>
-        <Label Content="Edit Profile Info" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="40" Margin="0,10,0,0" VerticalAlignment="Top" Height="86" Width="380"/>
+        <Label Content="Edit Profile Info" Foreground="White" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="40" Margin="0,10,0,0" VerticalAlignment="Top" Height="86" Width="380"/>
         <Button x:Name="ChoosePhotoButton" Content="Choose new photo" Click="ChoosePhotoButton_Click" Foreground="MediumPurple" Background="White" HorizontalAlignment="Left" Height="29" Margin="327,111,0,0" VerticalAlignment="Top" Width="328"/>
-        <Label Content="Profile picture:" HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="20" Margin="147,102,0,0" VerticalAlignment="Top" Height="47" Width="180"/>
-        <Label Content="Description:" HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="20" Margin="147,181,0,0" VerticalAlignment="Top" Height="46" Width="180"/>
-        <Label Content="Social Media Link:" HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="20" Margin="147,277,0,0" VerticalAlignment="Top" Height="46" Width="180"/>
-        <Button Content="Submit Update" Click="SubmitUpdateButton_Click" HorizontalAlignment="Left" Height="33" Margin="315,346,0,0" VerticalAlignment="Top" Width="217"/>
+        <Label Content="Profile picture:" Foreground="White" HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="20" Margin="147,102,0,0" VerticalAlignment="Top" Height="47" Width="180"/>
+        <Label Content="Description:" Foreground="White" HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="20" Margin="147,181,0,0" VerticalAlignment="Top" Height="46" Width="180"/>
+        <Label Content="Social Media Link:" Foreground="White" HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="20" Margin="147,277,0,0" VerticalAlignment="Top" Height="46" Width="180"/>
+        <Button Content="Submit Update" Background="MediumPurple" Foreground="White" FontSize="20" Click="SubmitUpdateButton_Click" HorizontalAlignment="Left" Height="43" Margin="305,357,0,0" VerticalAlignment="Top" Width="225"/>
         <Button Content="Back" Click="BackButton_Click" HorizontalAlignment="Left" Height="41" Margin="10,10,0,0" VerticalAlignment="Top" Width="95"/>
 
     </Grid>
