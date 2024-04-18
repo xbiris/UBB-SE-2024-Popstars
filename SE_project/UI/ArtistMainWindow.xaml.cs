@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using SE_project;
+using SE_project.Services;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -16,11 +18,20 @@ namespace wpfui
     /// </summary>
     public partial class MainWindow : Window
     {
+        private AlbumService _albumService;
+        private SongService _songService;
+        private List<Song> songList;
+     
+
         public MainWindow()
         {
             InitializeComponent();
-            MainFrame.NavigationUIVisibility = NavigationUIVisibility.Hidden;
+            //MainFrame.NavigationUIVisibility = NavigationUIVisibility.Hidden;
             WindowState = WindowState.Maximized;
+            _albumService = new AlbumService();
+            _songService = new SongService();
+            songList = PopulateListOfSongs();
+            DataContext = this;
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -28,22 +39,19 @@ namespace wpfui
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Click_Statistics(object sender, RoutedEventArgs e)
         {
             SE_project.UI.Statistics statisticsWindow = new SE_project.UI.Statistics();
             
             statisticsWindow.Show();    
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Button_Click_PFP(object sender, RoutedEventArgs e)
         {
-            // Link to new WPF called OtherWpf
-            //OtherWpf other = new OtherWpf();
-            //other.Show();
-            //this.Close();
+
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private void Button_Click_NewAlbum(object sender, RoutedEventArgs e)
         {
             SE_project.UI.UploadAlbum uploadAlbumWindow = new SE_project.UI.UploadAlbum();
 
@@ -51,6 +59,15 @@ namespace wpfui
         }
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+        private List<Song> PopulateListOfSongs()
+        {
+           
+            return _songService.GetSongsByCreator(1);
+        }
+        private void PopulateListOfAlbums(object sender, RoutedEventArgs e)
         {
 
         }
