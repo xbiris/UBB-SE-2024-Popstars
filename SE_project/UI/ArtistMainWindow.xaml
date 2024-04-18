@@ -23,7 +23,7 @@
         </Style>
         <Style x:Key="ListBoxStyle" TargetType="{x:Type ListBox}">
             <Setter Property="Background" Value="#BA68C8"/>
-            <Setter Property="BorderBrush" Value="MediumPurple"/>
+            <Setter Property="BorderBrush" Value="Black"/>
             <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="FontSize" Value="14"/>
@@ -47,13 +47,7 @@
         <Button x:Name="NewAlbumButton" Content="New Album" Style="{StaticResource ButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="26,315,0,0" Height="40" Width="125" Click="Button_Click_NewAlbum"/>
 
         <!-- ListBox for Songs -->
-        <ListBox x:Name="SongsListBox" ItemsSource="{Binding SongsList}" Style="{StaticResource ListBoxStyle}" Margin="511,67,32,195" ScrollViewer.VerticalScrollBarVisibility="Auto">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <TextBlock Text="{Binding Title}" Style="{StaticResource TextBlockStyle}"/>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+        <ListBox x:Name="SongsListBox" ItemsSource="{Binding SongsList}" Style="{StaticResource ListBoxStyle}" Margin="511,67,32,195" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
 
         <!-- ListBox for Albums -->
         <ListBox x:Name="AlbumListBox" ItemsSource="{Binding AlbumsList}" Style="{StaticResource ListBoxStyle}" Margin="511,288,32,24" ScrollViewer.VerticalScrollBarVisibility="Auto">

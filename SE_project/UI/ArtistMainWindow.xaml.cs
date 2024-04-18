@@ -31,10 +31,17 @@ namespace wpfui
             WindowState = WindowState.Minimized;
             _albumService = new AlbumService();
             _songService = new SongService();
-            SongsListBox.ItemsSource = PopulateListOfSongs();
 
-            // DataContext = this;
-        }
+            List<Song> songList = PopulateListOfSongs();
+
+            foreach(Song song in songList)
+            {
+
+				SongsListBox.Items.Add($"Title: {song.title}, length: {song.length}");
+			}
+
+			// DataContext = this;
+		}
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
