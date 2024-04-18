@@ -5,6 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -21,18 +22,18 @@ namespace wpfui
         private AlbumService _albumService;
         private SongService _songService;
         private List<Song> songList;
-     
 
         public MainWindow()
         {
             InitializeComponent();
             //MainFrame.NavigationUIVisibility = NavigationUIVisibility.Hidden;
-            WindowState = WindowState.Maximized;
+            WindowState = WindowState.Minimized;
             _albumService = new AlbumService();
             _songService = new SongService();
-            songList = PopulateListOfSongs();
-            DataContext = this;
+            //songList = PopulateListOfSongs();
+            //DataContext = this;
         }
+     
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -62,11 +63,13 @@ namespace wpfui
         {
 
         }
+       /* TODO!!
         private List<Song> PopulateListOfSongs()
         {
            
             return _songService.GetSongsByCreator(1);
         }
+       */
         private void PopulateListOfAlbums(object sender, RoutedEventArgs e)
         {
 

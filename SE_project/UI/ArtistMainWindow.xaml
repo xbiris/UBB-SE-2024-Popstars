@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wpfui"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="436" Width="890">
     <Window.Resources>
         <Style x:Key="TextBlockStyle" TargetType="{x:Type TextBlock}">
             <Setter Property="Foreground" Value="White"/>
@@ -34,7 +34,7 @@
             <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
         </Style>
     </Window.Resources>
-    <Grid Background="Black">
+    <Grid x:Name="mainGrid" Background="Black">
 
         <Border BorderBrush="White" BorderThickness="2" HorizontalAlignment="Left" Height="144" Margin="26,27,0,0" VerticalAlignment="Top" Width="156">
             <Image/>

@@ -37,8 +37,12 @@ namespace SE_project.Services
 			string extension = Path.GetExtension(filePath).ToLower();
 			return extension == ".mp3" || extension == ".wav" || extension == ".ogg";
 		}
+		public List<Song> GetSongsByCreator(int  creatorId)
+		{
+			return _songRepo.GetSongsByCreator(creatorId);
+		}
 
-		public void DeleteSong(int songId)
+        public void DeleteSong(int songId)
 		{
 			Song song = _songRepo.GetSongById(songId);
 			if (song != null)
@@ -47,7 +51,7 @@ namespace SE_project.Services
 			}
 		}
 
-		public Song GetSongById(int songId)
+        public Song GetSongById(int songId)
 		{
 			return _songRepo.GetSongById(songId);
 		}

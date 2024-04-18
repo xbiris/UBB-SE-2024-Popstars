@@ -40,8 +40,13 @@ namespace SE_project.Services
 				songRepo.AddSong(song);
 			}
 		}
+		public List<int> GetAlbumsIdByUser(int userId)
+		{
+			return _albumRepo.GetAlbumsIdByUser(userId);
+		}
 
-		public void AddSongToList(string title, string songPath)
+
+        public void AddSongToList(string title, string songPath)
 		{
 			Song song = new Song(title, songPath);
 			_songs.Add(song);

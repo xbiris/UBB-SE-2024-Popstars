@@ -45,7 +45,34 @@ namespace SE_project
 				connection.Close();
 			}
 		}
+		public List<int> GetAlbumsIdByUser(int userId)
+		{
+            List<int> albumIds = new List<int>();
 
+            string query = "SELECT id FROM Album WHERE creator_id = @CreatorId";
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@CreatorId", userId);
+
+                try
+                {
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        int albumId = (int)reader["id"];
+                        albumIds.Add(albumId);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            
+
+            return albumIds;
+        }
+    
 
 		public Album GetAlbumById(int albumId)
 		{
