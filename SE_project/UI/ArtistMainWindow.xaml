@@ -34,6 +34,7 @@
             <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
         </Style>
     </Window.Resources>
+
     <Grid Background="Black">
 
         <Border BorderBrush="White" BorderThickness="2" HorizontalAlignment="Left" Height="144" Margin="26,27,0,0" VerticalAlignment="Top" Width="156">
@@ -43,12 +44,11 @@
         <Label Content="Your Songs" Foreground="White" FontSize="20" HorizontalAlignment="Left" Height="44" Margin="511,27,0,0" VerticalAlignment="Top" Width="215"/>
         <Label Content="Your Albums" Foreground="White" FontSize="20" HorizontalAlignment="Left" Height="44" Margin="511,244,0,0" VerticalAlignment="Top" Width="215"/>
 
-
-
         <!-- Buttons -->
         <Button x:Name="StatisticsButton" Content="View Statistics" Style="{StaticResource ButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="182,317,0,0" Width="130" Click="Button_Click_Statistics"/>
         <Button x:Name="PFPButton"  Content="Change Profile Pic" Style="{StaticResource ButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="335,317,0,0" Width="138" Click="Button_Click_PFP" RenderTransformOrigin="0.232,0.597" Height="38"/>
         <Button x:Name="NewAlbumButton" Content="New Album" Style="{StaticResource ButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="26,315,0,0" Height="40" Width="125" Click="Button_Click_NewAlbum"/>
+
 
         <!-- ListBox for Songs -->
         <ListBox x:Name="SongsListBox" ItemsSource="{Binding SongsList}" Style="{StaticResource ListBoxStyle}" Margin="511,67,32,195"
@@ -91,10 +91,6 @@
             </ListBox.Template>
         </ListBox>
 
-
-        <!-- RichTextBox -->
-        <RichTextBox VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Margin="26,198,0,0" VerticalAlignment="Top" Width="448" Height="90" Background="Black">
-            <!-- Set RichTextBox background color here -->
             <FlowDocument>
                 <Paragraph>
                     <Run Text="BIO goes here" Foreground="White"/>

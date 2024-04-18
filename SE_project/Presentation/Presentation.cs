@@ -84,6 +84,33 @@ namespace SE_project.Presentation
 			}
 		}
 
+        public void UpdateCreatorInfo(int creatorId, string socialMediaLink, string profilePicPath, string description)
+        {
+            try
+            {
+                Creator creator = _creatorService.GetCreatorById(creatorId);
+                if (creator != null)
+                {
+                    string fullname = creator.fullname;
+                    string username = creator.username;
+                    string email = creator.email;
+                    string country = creator.country;
+                    string birthday = creator.birthday;
+                    // Call the service to update the Creator
+                    _creatorService.UpdateCreator(creatorId, fullname, username, email, country, birthday, socialMediaLink, description, profilePicPath);
+                    Console.WriteLine("Creator updated successfully.");
+                }
+                else
+                {
+                    Console.WriteLine("Creator not found.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error updating creator: {ex.Message}");
+            }
+        }
 
-	}
+
+    }
 }

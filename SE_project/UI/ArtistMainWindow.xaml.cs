@@ -78,5 +78,19 @@ namespace wpfui
         {
 
         }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void UpdateProfileInfoButton_Click(object sender, RoutedEventArgs e)
+        {
+            // called in order to send further the modified fields(artist name & artist bio) in order to update that data for that artist.
+
+            var secondWindow = new UpdateCreatorInfoWindow();
+
+            secondWindow.Show();
+        }
     }
 }
