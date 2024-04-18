@@ -110,16 +110,27 @@ namespace SE_project
 				SqlDataReader reader = command.ExecuteReader();
 				if (reader.Read())
 				{
-					return new Creator(
-						reader["username"].ToString(),
-						reader["fullname"].ToString(),
-						reader["email"].ToString(),
-						reader["country"].ToString(),
-						reader["birthdate"].ToString(),
-						reader["socialemedialink"].ToString(),
-						reader["description"].ToString(),
-						reader["profilePicPath"].ToString()
+                    // this is the only way this function actually worked for me.
+                    string[] stringArray = new string[10];
+					stringArray[0] = reader["username"].ToString();
+					stringArray[1] = reader["fullname"].ToString();
+					stringArray[2] = reader["email"].ToString();
+					stringArray[3] = reader["country"].ToString();
+					stringArray[4] = reader["birthdate"].ToString();
+					stringArray[5] = reader["socialmedialink"].ToString();
+					stringArray[6] = reader["description"].ToString();
+					stringArray[7] = reader["profilePicPath"].ToString();
+                    return new Creator(
+						stringArray[0],
+						stringArray[1],
+						stringArray[2],
+						stringArray[3],
+						stringArray[4],
+						stringArray[5],
+						stringArray[6],
+						stringArray[7]
                     );
+					
 				}
 				return null;
 			}
@@ -129,6 +140,50 @@ namespace SE_project
 			}
 		}
 
+        public void UpdateCreator(int creatorId, Creator creator)
+        {
+            string query = "UPDATE Creator SET ";
 
-	}
+            if (!string.IsNullOrEmpty(creator.socialmedialink))
+            {
+                query += "socialmedialink = @SocialMediaLink, ";
+            }
+
+            if (!string.IsNullOrEmpty(creator.description))
+            {
+                query += "description = @Description, ";
+            }
+
+            if (!string.IsNullOrEmpty(creator.profilePicPath))
+            {
+                query += "profilePicPath = @ProfilePicPath, ";
+            }
+
+            query = query.TrimEnd(',', ' ');
+
+            query += " WHERE id = @Id";
+
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@SocialMediaLink", creator.socialmedialink);
+            command.Parameters.AddWithValue("@Description", creator.description);
+            if (!string.IsNullOrEmpty(creator.profilePicPath))
+            {
+                command.Parameters.AddWithValue("@ProfilePicPath", creator.profilePicPath);
+            }
+            command.Parameters.AddWithValue("@Id", creatorId);
+
+            try
+            {
+                connection.Open();
+                command.ExecuteNonQuery();
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+        }
+
+
+    }
 }

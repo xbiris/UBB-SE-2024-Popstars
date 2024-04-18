@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using SE_project.UI;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -58,6 +59,20 @@ namespace wpfui
         private void RichTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void UpdateProfileInfoButton_Click(object sender, RoutedEventArgs e)
+        {
+            // called in order to send further the modified fields(artist name & artist bio) in order to update that data for that artist.
+
+            var secondWindow = new UpdateCreatorInfoWindow();
+
+            secondWindow.Show();
         }
     }
 }

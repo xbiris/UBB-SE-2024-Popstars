@@ -13,9 +13,9 @@
     </Window.Resources>
     <Grid>
         <Frame x:Name="MainFrame" />
-        <TextBox FontSize="30" TextAlignment="Left" HorizontalAlignment="Left" Margin="120,25,0,0" TextWrapping="Wrap" Text="ArtistNameGoesHere" VerticalAlignment="Top" TextChanged="TextBox_TextChanged" RenderTransformOrigin="0.715,1.951" Width="350" Height="50"/>
+        <TextBox IsReadOnly="True" FontSize="30" TextAlignment="Left" HorizontalAlignment="Left" Margin="120,25,0,0" TextWrapping="Wrap" Text="ArtistNameGoesHere" VerticalAlignment="Top" TextChanged="TextBox_TextChanged" RenderTransformOrigin="0.715,1.951" Width="350" Height="50"/>
         <Button Content="View statistics" HorizontalAlignment="Left" Margin="172,214,0,0" VerticalAlignment="Top" Click="Button_Click" Height="26" Width="124"/>
-        <Button Content="Change Profile Pick" HorizontalAlignment="Left" Margin="340,215,0,0" VerticalAlignment="Top" Click="Button_Click_1" Height="24" Width="124"/>
+        <Button Content="Update profile" HorizontalAlignment="Left" Margin="340,215,0,0" VerticalAlignment="Top" Click="UpdateProfileInfoButton_Click" Height="24" Width="124"/>
         <Button Content="Create new album" HorizontalAlignment="Left" Margin="4,215,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.379,0.002" Height="25" Width="125" Click="Button_Click_2"/>
 
         <Grid>
@@ -29,7 +29,7 @@
             </Grid.ColumnDefinitions>
 
             <Border Grid.Row="0" Grid.Column="0" BorderBrush="Black" BorderThickness="1" Margin="4">
-                <Image  HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100"/>
+                <Image HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100"/>
             </Border>
         </Grid>
 
@@ -47,7 +47,7 @@
                 <ListBoxItem>Album 2</ListBoxItem>
             </ListBox.Items>
         </ListBox>
-        <RichTextBox VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Margin="5,114,0,0" VerticalAlignment="Top" Width="465" Height="90" >
+        <RichTextBox IsReadOnly="True" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Margin="5,114,0,0" VerticalAlignment="Top" Width="465" Height="90" >
             <FlowDocument>
                 <Paragraph>
                     <Run Text="BIO goes here"/>
@@ -62,4 +62,5 @@
 
 
     </Grid>
+    
 </Window>

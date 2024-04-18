@@ -39,6 +39,12 @@ namespace SE_project.Services
 		{
 			return _creatorRepo.GetCreatorById(creatorId);
 		}
-	}
+
+        public void UpdateCreator(int creatorId, string fullname, string username, string email, string country, string birthday, string socialMediaLink, string description, string profilePicPath)
+        {
+            var creator = new Creator(fullname, username, email, country, birthday, socialMediaLink, description, profilePicPath);
+            _creatorRepo.UpdateCreator(creatorId, creator);
+        }
+    }
 
 }
