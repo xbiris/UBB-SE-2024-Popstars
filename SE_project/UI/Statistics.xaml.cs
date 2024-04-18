@@ -28,31 +28,21 @@ namespace SE_project.UI
             InitializeComponent();
             WindowState = WindowState.Maximized;
             _creatorService = new CreatorService();
-            //text boxes populated at initualization 
-            int totalSaves = _creatorService.GetNoOfSavesPerCreator(1); //to be changed to actual id 
-            NoSaves.Text = totalSaves.ToString();
+
+            //text boxes populated at initialization 
+             
+            NoSaves.Text  =  _creatorService.GetNoOfSavesPerCreator(1).ToString(); //to be modified with actual id 
+            NoShares.Text  = _creatorService.GetNoSharesPerCreator(1).ToString();
+            NoStreams.Text  = _creatorService.GetNoStreamsPerCreator(1).ToString();
+            NoPlaylists.Text = _creatorService.GetNoStreamsPerCreator(1).ToString();
+
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
         {
             this.Hide();
         }
-        private void AddShares(object sender, RoutedEventArgs e)
-        {
-            NoShares.Text = string.Empty;
-
-
-        }
-        private void AddStreams(object sender, RoutedEventArgs e)
-        {
-            NoStreams.Text = string.Empty;
-        }
-        private void AddSaves(object sender, RoutedEventArgs e)
-        {
-            int totalSaves = _creatorService.GetNoOfSavesPerCreator(1);
-            NoSaves.Text = totalSaves.ToString();
-        }
-
+        
         private void NoShares_TextChanged(object sender, TextChangedEventArgs e)
         {
 

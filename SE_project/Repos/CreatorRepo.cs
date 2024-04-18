@@ -73,7 +73,7 @@ namespace SE_project
 						   "INNER JOIN Song ON Album.id = Song.album_id " +
 						   "WHERE Album.creator_id = @CreatorId";
 
-			using (SqlCommand command = new SqlCommand(query, connection))
+			SqlCommand command = new SqlCommand(query, connection);
 			{
 				command.Parameters.AddWithValue("@CreatorId", creatorId);
 
@@ -96,9 +96,106 @@ namespace SE_project
 			return totalSaves;
 		}
 
-	
+        public int GetNoOfSharesPerCreator(int creatorId)
+        {
 
-		public Creator GetCreatorById(int creatorId)
+            int totalShares = 0;
+
+            string query = "SELECT SUM(Song.no_shares) AS total_shares " +
+                           "FROM Album " +
+                           "INNER JOIN Song ON Album.id = Song.album_id " +
+                           "WHERE Album.creator_id = @CreatorId";
+
+            SqlCommand command = new SqlCommand(query, connection);
+            {
+                command.Parameters.AddWithValue("@CreatorId", creatorId);
+
+                try
+                {
+                    connection.Open();
+                    object result = command.ExecuteScalar();
+
+                    if (result != DBNull.Value)
+                    {
+                        totalShares = Convert.ToInt32(result);
+                    }
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+
+            return totalShares;
+        }
+
+        public int GetNoOfStreamsPerCreator(int creatorId)
+        {
+
+            int totalStreams = 0;
+
+            string query = "SELECT SUM(Song.no_streams) AS total_streams " +
+                           "FROM Album " +
+                           "INNER JOIN Song ON Album.id = Song.album_id " +
+                           "WHERE Album.creator_id = @CreatorId";
+
+            SqlCommand command = new SqlCommand(query, connection);
+            {
+                command.Parameters.AddWithValue("@CreatorId", creatorId);
+
+                try
+                {
+                    connection.Open();
+                    object result = command.ExecuteScalar();
+
+                    if (result != DBNull.Value)
+                    {
+                        totalStreams = Convert.ToInt32(result);
+                    }
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+
+            return totalStreams;
+        }
+        public int GetNoOfPlaylistsPerCreator(int creatorId)
+        {
+
+            int totalPlaylists = 0;
+
+            string query = "SELECT SUM(Song.no_playlists) AS total_playlists " +
+                           "FROM Album " +
+                           "INNER JOIN Song ON Album.id = Song.album_id " +
+                           "WHERE Album.creator_id = @CreatorId";
+
+            SqlCommand command = new SqlCommand(query, connection);
+            {
+                command.Parameters.AddWithValue("@CreatorId", creatorId);
+
+                try
+                {
+                    connection.Open();
+                    object result = command.ExecuteScalar();
+
+                    if (result != DBNull.Value)
+                    {
+                        totalPlaylists = Convert.ToInt32(result);
+                    }
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+
+            return totalPlaylists;
+        }
+
+
+        public Creator GetCreatorById(int creatorId)
 		{
 			string query = "SELECT id, username, fullname, email, country, birthdate, socialmedialink, description, profilePicPath FROM Creator WHERE id = @Id";
 			SqlCommand command = new SqlCommand(query, connection);
