@@ -35,9 +35,9 @@
 
     <Grid Background="Black">
         <Border BorderBrush="White" BorderThickness="2" HorizontalAlignment="Left" Height="144" Margin="26,27,0,0" VerticalAlignment="Top" Width="156">
-            <Image Name="ProfilePic"/>
+            <Image/>
         </Border>
-        <Label Name="ArtistNameTextField" Content="ArtistName" Foreground="White" FontSize="27" HorizontalAlignment="Left" Height="44" Margin="205,27,0,0" VerticalAlignment="Top" Width="215"/>
+        <Label Content="ArtistName" Foreground="White" FontSize="27" HorizontalAlignment="Left" Height="44" Margin="205,27,0,0" VerticalAlignment="Top" Width="215"/>
         <Label Content="Your Songs" Foreground="White" FontSize="20" HorizontalAlignment="Left" Height="44" Margin="511,27,0,0" VerticalAlignment="Top" Width="215"/>
         <Label Content="Your Albums" Foreground="White" FontSize="20" HorizontalAlignment="Left" Height="44" Margin="511,244,0,0" VerticalAlignment="Top" Width="215"/>
 
@@ -57,7 +57,7 @@
         <RichTextBox HorizontalAlignment="Left" Background="Black" VerticalAlignment="Top" Margin="26,190,0,0" Width="450" Height="98">
             <FlowDocument>
                 <Paragraph>
-                    <Run Name="BioTextField" Text="Bio Example" Foreground="White" />
+                    <Run Text="BIO goes here" Foreground="White" />
                 </Paragraph>
             </FlowDocument>
         </RichTextBox>
