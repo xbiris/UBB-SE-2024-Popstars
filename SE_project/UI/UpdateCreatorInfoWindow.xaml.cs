@@ -26,6 +26,8 @@ namespace SE_project.UI
 
         private PresentationSpotify presentation;
 
+        public event EventHandler UpdateClicked;
+
         public UpdateCreatorInfoWindow()
         {
             InitializeComponent();
@@ -56,6 +58,8 @@ namespace SE_project.UI
                 string description = DescriptionTextField.Text;
 
                 presentation.UpdateCreatorInfo(1, socialMediaLink, PhotoPath, description);
+
+                UpdateClicked?.Invoke(this, EventArgs.Empty);
 
             }
             catch (Exception ex)

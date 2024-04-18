@@ -111,6 +111,10 @@ namespace SE_project.Presentation
             }
         }
 
+        public (string, string, string) GetCreatorInfoById(int creatorId)
+        {
+            return _creatorService.GetCreatorInfoById(creatorId);
+        }
 
     }
 }
