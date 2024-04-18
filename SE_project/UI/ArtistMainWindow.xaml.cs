@@ -31,8 +31,9 @@ namespace wpfui
             WindowState = WindowState.Minimized;
             _albumService = new AlbumService();
             _songService = new SongService();
-           // songList = PopulateListOfSongs();
-           // DataContext = this;
+            SongsListBox.ItemsSource = PopulateListOfSongs();
+
+            // DataContext = this;
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -63,13 +64,13 @@ namespace wpfui
         {
 
         }
-        /*
+        
         private List<Song> PopulateListOfSongs()
         {
            
             return _songService.GetSongsByCreator(1);
         }
-        */
+        
         private void PopulateListOfAlbums(object sender, RoutedEventArgs e)
         {
 
