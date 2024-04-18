@@ -45,9 +45,44 @@ namespace SE_project
 				connection.Close();
 			}
 		}
+        public List<Album> GetAlbumsByCreatorId(int creatorId)
+        {
+            List<Album> albums = new List<Album>();
+            string query = "SELECT id, title, releasedate, genre, photourl FROM Album WHERE creator_id = @CreatorId";
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@CreatorId", creatorId);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    Album album = new Album(
+                        reader["title"].ToString(),
+                        reader["releasedate"].ToString(),
+                        reader["genre"].ToString(),
+                        reader["photourl"].ToString(),
+                        new List<Song>()
+                    );
+                    albums.Add(album);
+                }
+                reader.Close();
+                return albums;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
 
 
-		public Album GetAlbumById(int albumId)
+        public Album GetAlbumById(int albumId)
 		{
 			Album album = null;
 			string query = "SELECT id, title, releasedate, genre, photourl FROM Album WHERE id = @Id";

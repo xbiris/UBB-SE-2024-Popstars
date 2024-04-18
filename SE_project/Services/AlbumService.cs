@@ -46,8 +46,13 @@ namespace SE_project.Services
 			Song song = new Song(title, songPath);
 			_songs.Add(song);
 		}
+        public List<Album> GetAlbumsByCreatorId(int creatorId)
+		{
+			return _albumRepo.GetAlbumsByCreatorId(creatorId);
+		}
 
-		public Album GetAlbumById(int albumId)
+
+        public Album GetAlbumById(int albumId)
 		{
 			return _albumRepo.GetAlbumById(albumId);
 		}

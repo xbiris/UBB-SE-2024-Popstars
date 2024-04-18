@@ -22,6 +22,7 @@ namespace wpfui
         private AlbumService _albumService;
         private SongService _songService;
         private List<Song> songList;
+        private List<Album> albumList;
      
 
         public MainWindow()
@@ -33,14 +34,17 @@ namespace wpfui
             _songService = new SongService();
 
             List<Song> songList = PopulateListOfSongs();
+            albumList = PopulateListOfAlbums();
 
             foreach(Song song in songList)
             {
-
 				SongsListBox.Items.Add($"Title: {song.title}, length: {song.length}");
 			}
 
-			// DataContext = this;
+			foreach(Album album in albumList)
+            {
+                AlbumListBox.Items.Add($"Title: {album.title}, genre: {album.genre}");
+            }
 		}
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -74,8 +78,11 @@ namespace wpfui
         
         private List<Song> PopulateListOfSongs()
         {
-           
-            return _songService.GetSongsByCreator(1);
+            return _songService.GetSongsByCreator(1); //to be changed with id from the login page 
+        }
+        private List<Album> PopulateListOfAlbums()
+        {
+            return _albumService.GetAlbumsByCreatorId(1); //same here 
         }
         
         private void PopulateListOfAlbums(object sender, RoutedEventArgs e)

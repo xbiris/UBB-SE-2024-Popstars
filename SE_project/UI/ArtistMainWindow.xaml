@@ -50,13 +50,8 @@
         <ListBox x:Name="SongsListBox" ItemsSource="{Binding SongsList}" Style="{StaticResource ListBoxStyle}" Margin="511,67,32,195" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
 
         <!-- ListBox for Albums -->
-        <ListBox x:Name="AlbumListBox" ItemsSource="{Binding AlbumsList}" Style="{StaticResource ListBoxStyle}" Margin="511,288,32,24" ScrollViewer.VerticalScrollBarVisibility="Auto">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <TextBlock Text="{Binding Title}" Style="{StaticResource TextBlockStyle}"/>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+        <ListBox x:Name="AlbumListBox" ItemsSource="{Binding AlbumsList}" Style="{StaticResource ListBoxStyle}" Margin="511,288,32,24" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+
 
         <!-- RichTextBox for Bio -->
         <RichTextBox HorizontalAlignment="Left" Background="Black" VerticalAlignment="Top" Margin="26,190,0,0" Width="450" Height="98">
