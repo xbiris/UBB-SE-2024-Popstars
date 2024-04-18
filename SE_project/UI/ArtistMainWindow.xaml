@@ -65,10 +65,10 @@
         </ListBox>
 
         <!-- RichTextBox for Bio -->
-        <RichTextBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="26,375,0,0" Width="450" Height="50">
+        <RichTextBox HorizontalAlignment="Left" Background="Black" VerticalAlignment="Top" Margin="26,190,0,0" Width="450" Height="98">
             <FlowDocument>
                 <Paragraph>
-                    <Run Text="BIO goes here" Foreground="White"/>
+                    <Run Text="BIO goes here" Foreground="White" />
                 </Paragraph>
             </FlowDocument>
         </RichTextBox>
