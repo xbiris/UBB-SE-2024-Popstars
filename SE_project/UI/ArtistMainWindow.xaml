@@ -23,9 +23,7 @@
         </Style>
         <Style x:Key="ListBoxStyle" TargetType="{x:Type ListBox}">
             <Setter Property="Background" Value="#BA68C8"/>
-            <!-- Adjust ListBox background color here -->
             <Setter Property="BorderBrush" Value="MediumPurple"/>
-            <!-- Adjust ListBox border color here -->
             <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="FontSize" Value="14"/>
@@ -36,7 +34,6 @@
     </Window.Resources>
 
     <Grid Background="Black">
-
         <Border BorderBrush="White" BorderThickness="2" HorizontalAlignment="Left" Height="144" Margin="26,27,0,0" VerticalAlignment="Top" Width="156">
             <Image/>
         </Border>
@@ -46,58 +43,34 @@
 
         <!-- Buttons -->
         <Button x:Name="StatisticsButton" Content="View Statistics" Style="{StaticResource ButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="182,317,0,0" Width="130" Click="Button_Click_Statistics"/>
-        <Button x:Name="PFPButton"  Content="Change Profile Pic" Style="{StaticResource ButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="335,317,0,0" Width="138" Click="Button_Click_PFP" RenderTransformOrigin="0.232,0.597" Height="38"/>
+        <Button x:Name="PFPButton" Content="Change Profile Pic" Style="{StaticResource ButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="335,317,0,0" Width="138" Height="38" Click="PFPButton_Click"/>
         <Button x:Name="NewAlbumButton" Content="New Album" Style="{StaticResource ButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="26,315,0,0" Height="40" Width="125" Click="Button_Click_NewAlbum"/>
 
-
         <!-- ListBox for Songs -->
-        <ListBox x:Name="SongsListBox" ItemsSource="{Binding SongsList}" Style="{StaticResource ListBoxStyle}" Margin="511,67,32,195"
-         ScrollViewer.VerticalScrollBarVisibility="Auto" BorderThickness="1" BorderBrush="#5e35b1">
+        <ListBox x:Name="SongsListBox" ItemsSource="{Binding SongsList}" Style="{StaticResource ListBoxStyle}" Margin="511,67,32,195" ScrollViewer.VerticalScrollBarVisibility="Auto">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding Title}" Style="{StaticResource TextBlockStyle}"/>
                 </DataTemplate>
             </ListBox.ItemTemplate>
-            <ListBox.Template>
-                <ControlTemplate TargetType="ListBox">
-                    <Border CornerRadius="10" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" Background="#BA68C8">
-                        <ScrollViewer Padding="{TemplateBinding Padding}"
-                              Focusable="False">
-                            <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
-                        </ScrollViewer>
-                    </Border>
-                </ControlTemplate>
-            </ListBox.Template>
         </ListBox>
 
         <!-- ListBox for Albums -->
-
-        <ListBox x:Name="AlbumListBox" ItemsSource="{Binding SongsList}" Style="{StaticResource ListBoxStyle}" Margin="511,288,32,24"
-  ScrollViewer.VerticalScrollBarVisibility="Auto" BorderThickness="1" BorderBrush="#5e35b1">
+        <ListBox x:Name="AlbumListBox" ItemsSource="{Binding AlbumsList}" Style="{StaticResource ListBoxStyle}" Margin="511,288,32,24" ScrollViewer.VerticalScrollBarVisibility="Auto">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding Title}" Style="{StaticResource TextBlockStyle}"/>
                 </DataTemplate>
             </ListBox.ItemTemplate>
-            <ListBox.Template>
-                <ControlTemplate TargetType="ListBox">
-                    <Border CornerRadius="10" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" Background="#BA68C8">
-                        <ScrollViewer Padding="{TemplateBinding Padding}"
-                       Focusable="False">
-                            <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
-                        </ScrollViewer>
-                    </Border>
-                </ControlTemplate>
-            </ListBox.Template>
         </ListBox>
 
+        <!-- RichTextBox for Bio -->
+        <RichTextBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="26,375,0,0" Width="450" Height="50">
             <FlowDocument>
                 <Paragraph>
                     <Run Text="BIO goes here" Foreground="White"/>
                 </Paragraph>
             </FlowDocument>
         </RichTextBox>
-
-
     </Grid>
 </Window>

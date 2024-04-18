@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using SE_project.UI;
 
 namespace wpfui
 {
@@ -88,9 +89,14 @@ namespace wpfui
         {
             // called in order to send further the modified fields(artist name & artist bio) in order to update that data for that artist.
 
-            var secondWindow = new UpdateCreatorInfoWindow();
-
-            secondWindow.Show();
+           
         }
+
+		private void PFPButton_Click(object sender, RoutedEventArgs e)
+		{
+			var secondWindow = new UpdateCreatorInfoWindow();
+
+			secondWindow.Show();
+		}
     }
 }
