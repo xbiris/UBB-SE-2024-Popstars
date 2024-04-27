@@ -110,7 +110,10 @@ namespace SE_project.Presentation
                 Console.WriteLine($"Error updating creator: {ex.Message}");
             }
         }
-
+        public (string, string, string) GetCreatorInfoById(int creatorId)
+        {
+            return _creatorService.GetCreatorInfoById(creatorId);
+        }
 
     }
 }

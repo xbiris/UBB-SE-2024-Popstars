@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using SE_project.UI;
+using SE_project.Presentation;
 
 namespace wpfui
 {
@@ -23,8 +24,8 @@ namespace wpfui
         private SongService _songService;
         private List<Song> songList;
         private List<Album> albumList;
-     
 
+        private PresentationSpotify presentation;
         public MainWindow()
         {
             InitializeComponent();
@@ -32,6 +33,8 @@ namespace wpfui
             WindowState = WindowState.Minimized;
             _albumService = new AlbumService();
             _songService = new SongService();
+
+            presentation = new PresentationSpotify();
 
             List<Song> songList = PopulateListOfSongs();
             albumList = PopulateListOfAlbums();
@@ -45,7 +48,9 @@ namespace wpfui
             {
                 AlbumListBox.Items.Add($"Title: {album.title}, genre: {album.genre}");
             }
-		}
+
+            UpdateArtistInfo(this, EventArgs.Empty);
+        }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -111,7 +116,21 @@ namespace wpfui
 		{
 			var secondWindow = new UpdateCreatorInfoWindow();
 
-			secondWindow.Show();
+            // subscribe to event
+            secondWindow.UpdateClicked += UpdateArtistInfo;
+
+            secondWindow.Show();
 		}
+
+        private void UpdateArtistInfo(object sender, EventArgs e)
+        {
+            int creatorId = 1;
+            var (artistName, description, imagePath) = presentation.GetCreatorInfoById(creatorId);
+
+            ArtistNameTextField.Content = artistName;
+            BioTextField.Text = description;
+            ProfilePic.Source = new BitmapImage(new Uri(imagePath));
+        }
+
     }
 }
