@@ -129,7 +129,13 @@ namespace wpfui
 
             ArtistNameTextField.Content = artistName;
             BioTextField.Text = description;
+            try{
             ProfilePic.Source = new BitmapImage(new Uri(imagePath));
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
     }

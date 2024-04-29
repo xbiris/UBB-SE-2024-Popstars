@@ -1,11 +1,11 @@
 using System;
-using System.Data;
-using Microsoft.Data.SqlClient;
+using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
+using System.Diagnostics.Metrics;
+using Microsoft.Data.SqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
-using System.Collections.Generic;
-using System.Diagnostics.Metrics;
 
 namespace SE_project
 {
@@ -17,7 +17,7 @@ namespace SE_project
 		{
 			string connectionString =
 				ConfigurationLoaderFactory.GetConfigurationLoader("appconfig.json").
-			GetValue<string>("DatabaseConnection"); ;
+			GetValue<string>("DatabaseConnection");
 			connection = new SqlConnection(connectionString);
 		}
 		public void AddCreator(Creator creator, string hashedPass)
@@ -27,11 +27,11 @@ namespace SE_project
 			command.Parameters.AddWithValue("@FullName", creator.fullname);
 			command.Parameters.AddWithValue("@Username", creator.username);
 			command.Parameters.AddWithValue("@Email", creator.email);
-			command.Parameters.AddWithValue("@Country", creator.country);
-			command.Parameters.AddWithValue("@Birthdate", creator.birthday);
-			command.Parameters.AddWithValue("@SocialMediaLink", creator.socialmedialink);
-			command.Parameters.AddWithValue("@Description", creator.description);
-			command.Parameters.AddWithValue("@ProfilePicPath", creator.profilePicPath);
+			command.Parameters.AddWithValue("@Country", creator.Country);
+			command.Parameters.AddWithValue("@Birthdate", creator.Birthday);
+			command.Parameters.AddWithValue("@SocialMediaLink", creator.Socialmedialink);
+			command.Parameters.AddWithValue("@Description", creator.Description);
+			command.Parameters.AddWithValue("@ProfilePicPath", creator.ProfilePicPath);
 			command.Parameters.AddWithValue("@Password", hashedPass);
 
 			try
@@ -65,7 +65,6 @@ namespace SE_project
 
 		public int GetNoOfSavesPerCreator(int creatorId)
 		{
-
 			int totalSaves = 0;
 
 			string query = "SELECT SUM(Song.no_saves) AS total_saves " +
@@ -98,7 +97,6 @@ namespace SE_project
 
         public int GetNoOfSharesPerCreator(int creatorId)
         {
-
             int totalShares = 0;
 
             string query = "SELECT SUM(Song.no_shares) AS total_shares " +
@@ -131,7 +129,6 @@ namespace SE_project
 
         public int GetNoOfStreamsPerCreator(int creatorId)
         {
-
             int totalStreams = 0;
 
             string query = "SELECT SUM(Song.no_streams) AS total_streams " +
@@ -163,7 +160,6 @@ namespace SE_project
         }
         public int GetNoOfPlaylistsPerCreator(int creatorId)
         {
-
             int totalPlaylists = 0;
 
             string query = "SELECT SUM(Song.no_playlists) AS total_playlists " +
@@ -193,7 +189,6 @@ namespace SE_project
 
             return totalPlaylists;
         }
-
 
         public Creator GetCreatorById(int creatorId)
 		{
@@ -225,9 +220,7 @@ namespace SE_project
 						stringArray[4],
 						stringArray[5],
 						stringArray[6],
-						stringArray[7]
-                    );
-					
+						stringArray[7]);
 				}
 				return null;
 			}
@@ -241,17 +234,17 @@ namespace SE_project
         {
             string query = "UPDATE Creator SET ";
 
-            if (!string.IsNullOrEmpty(creator.socialmedialink))
+            if (!string.IsNullOrEmpty(creator.Socialmedialink))
             {
                 query += "socialmedialink = @SocialMediaLink, ";
             }
 
-            if (!string.IsNullOrEmpty(creator.description))
+            if (!string.IsNullOrEmpty(creator.Description))
             {
                 query += "description = @Description, ";
             }
 
-            if (!string.IsNullOrEmpty(creator.profilePicPath))
+            if (!string.IsNullOrEmpty(creator.ProfilePicPath))
             {
                 query += "profilePicPath = @ProfilePicPath, ";
             }
@@ -261,11 +254,11 @@ namespace SE_project
             query += " WHERE id = @Id";
 
             SqlCommand command = new SqlCommand(query, connection);
-            command.Parameters.AddWithValue("@SocialMediaLink", creator.socialmedialink);
-            command.Parameters.AddWithValue("@Description", creator.description);
-            if (!string.IsNullOrEmpty(creator.profilePicPath))
+            command.Parameters.AddWithValue("@SocialMediaLink", creator.Socialmedialink);
+            command.Parameters.AddWithValue("@Description", creator.Description);
+            if (!string.IsNullOrEmpty(creator.ProfilePicPath))
             {
-                command.Parameters.AddWithValue("@ProfilePicPath", creator.profilePicPath);
+                command.Parameters.AddWithValue("@ProfilePicPath", creator.ProfilePicPath);
             }
             command.Parameters.AddWithValue("@Id", creatorId);
 
@@ -278,9 +271,6 @@ namespace SE_project
             {
                 connection.Close();
             }
-
         }
-
-
     }
 }

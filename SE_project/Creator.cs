@@ -12,22 +12,22 @@ namespace SE_project
 		public string username { get; set; }
 		public string fullname { get; set; }
 		public string email { get; set; }
-		public string country { get; set; }
-		public string birthday { get; set; }
-		public string socialmedialink { get; set; }
-        public string description { get; set; }
-        public string profilePicPath { get; set; }
+		public string Country { get; set; }
+		public string Birthday { get; set; }
+		public string Socialmedialink { get; set; }
+        public string Description { get; set; }
+        public string ProfilePicPath { get; set; }
 
         public Creator(string username, string fullname, string email, string country, string birthday, string socialmedialink, string description, string profilePicPath)
 		{
 			this.username = username;
 			this.fullname = fullname;
 			this.email = email;
-			this.country = country;
-			this.birthday = birthday;
-			this.socialmedialink = socialmedialink;
-			this.description = description;
-			this.profilePicPath = profilePicPath;
+			this.Country = country;
+			this.Birthday = birthday;
+			this.Socialmedialink = socialmedialink;
+			this.Description = description;
+			this.ProfilePicPath = profilePicPath;
         }
 	}
 }

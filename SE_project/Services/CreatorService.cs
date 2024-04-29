@@ -9,7 +9,6 @@ namespace SE_project.Services
 	public class CreatorService : IService
 	{
 		private CreatorRepo _creatorRepo;
-
 		public CreatorService()
 		{
 			_creatorRepo = new CreatorRepo();
@@ -20,7 +19,6 @@ namespace SE_project.Services
 			var creator = new Creator(fullname, username, email, country, birthday, socialMediaLink, description, profilePicPath);
 			_creatorRepo.AddCreator(creator, hashedPass);
 		}
-	
 		public void DeleteCreator(int creatorId)
 		{
 			Creator creator = _creatorRepo.GetCreatorById(creatorId);
@@ -29,11 +27,10 @@ namespace SE_project.Services
 				_creatorRepo.DeleteCreator(creator);
 			}
 		}
-        public int GetNoOfSavesPerCreator(int creatorId)
-        {
-            
-            return _creatorRepo.GetNoOfSavesPerCreator(creatorId);
-        }
+		public int GetNoOfSavesPerCreator(int creatorId)
+		{
+			return _creatorRepo.GetNoOfSavesPerCreator(creatorId);
+		}
 		public int GetNoSharesPerCreator(int creatorId)
 		{
 			return _creatorRepo.GetNoOfSharesPerCreator(creatorId);
@@ -49,22 +46,20 @@ namespace SE_project.Services
 			return _creatorRepo.GetNoOfPlaylistsPerCreator(creatorId);
 		}
 
-        public Creator GetCreatorById(int creatorId)
+		public Creator GetCreatorById(int creatorId)
 		{
 			return _creatorRepo.GetCreatorById(creatorId);
 		}
 
-        public void UpdateCreator(int creatorId, string fullname, string username, string email, string country, string birthday, string socialMediaLink, string description, string profilePicPath)
-        {
-            var creator = new Creator(fullname, username, email, country, birthday, socialMediaLink, description, profilePicPath);
-            _creatorRepo.UpdateCreator(creatorId, creator);
-        }
-        public (string, string, string) GetCreatorInfoById(int creatorId)
-        {
-            Creator creator = _creatorRepo.GetCreatorById(creatorId);
-            return (creator.fullname, creator.description, creator.profilePicPath);
-        }
-
-    }
-
+		public void UpdateCreator(int creatorId, string fullname, string username, string email, string country, string birthday, string socialMediaLink, string description, string profilePicPath)
+		{
+			var creator = new Creator(fullname, username, email, country, birthday, socialMediaLink, description, profilePicPath);
+			_creatorRepo.UpdateCreator(creatorId, creator);
+		}
+		public (string, string, string) GetCreatorInfoById(int creatorId)
+		{
+			Creator creator = _creatorRepo.GetCreatorById(creatorId);
+			return (creator.fullname, creator.Description, creator.ProfilePicPath);
+		}
+	}
 }

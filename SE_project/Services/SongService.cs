@@ -5,11 +5,11 @@ namespace SE_project.Services
 {
 	public class SongService : IService
 	{
-		private SongRepo _songRepo;
+		private SongRepo songRepo;
 
 		public SongService()
 		{
-			_songRepo = new SongRepo();
+			songRepo = new SongRepo();
 		}
 
 		public void AddSong(string title, string filePath)
@@ -29,7 +29,7 @@ namespace SE_project.Services
 				throw new ArgumentException("Please enter a title");
 			}
 			var song = new Song(title, filePath);
-			_songRepo.AddSong(song);
+			songRepo.AddSong(song);
 		}
 
 		private bool IsValidAudioFile(string filePath)
@@ -39,26 +39,26 @@ namespace SE_project.Services
 		}
         public List<Song> GetSongsByCreator(int creatorId)
 		{
-			return _songRepo.GetSongsByCreator(creatorId); 
+			return songRepo.GetSongsByCreator(creatorId);
 		}
 
         public void DeleteSong(int songId)
 		{
-			Song song = _songRepo.GetSongById(songId);
+			Song song = songRepo.GetSongById(songId);
 			if (song != null)
 			{
-				_songRepo.DeleteSong(song);
+				songRepo.DeleteSong(song);
 			}
 		}
 
 		public Song GetSongById(int songId)
 		{
-			return _songRepo.GetSongById(songId);
+			return songRepo.GetSongById(songId);
 		}
 
 		public List<Song> GetSongsFromAlbum(int albumId)
 		{
-			return _songRepo.GetSongsFromAlbum(albumId);
+			return songRepo.GetSongsFromAlbum(albumId);
 		}
 	}
 }

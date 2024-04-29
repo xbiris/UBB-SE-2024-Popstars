@@ -94,8 +94,8 @@ namespace SE_project.Presentation
                     string fullname = creator.fullname;
                     string username = creator.username;
                     string email = creator.email;
-                    string country = creator.country;
-                    string birthday = creator.birthday;
+                    string country = creator.Country;
+                    string birthday = creator.Birthday;
                     // Call the service to update the Creator
                     _creatorService.UpdateCreator(creatorId, fullname, username, email, country, birthday, socialMediaLink, description, profilePicPath);
                     Console.WriteLine("Creator updated successfully.");
