@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
-using System.Data;
-using Microsoft.Data.SqlClient;
 using System.Configuration;
+using System.Data;
 using System.Windows;
+using Microsoft.Data.SqlClient;
 
 namespace SE_project
 {
@@ -24,10 +24,10 @@ namespace SE_project
 			string query = "INSERT INTO Song (title, song_length, songUrl, album_id) VALUES (@Title, @Length, @SongUrl, @AlbumId)";
 			SqlCommand command = new SqlCommand(query, connection);
 
-			command.Parameters.AddWithValue("@Title", song.title);
-			command.Parameters.AddWithValue("@Length", song.length);
-			command.Parameters.AddWithValue("@SongUrl", song.songUrl);
-			command.Parameters.AddWithValue("@AlbumId", song.albumId);
+			command.Parameters.AddWithValue("@Title", song.Title);
+			command.Parameters.AddWithValue("@Length", song.Length);
+			command.Parameters.AddWithValue("@SongUrl", song.SongUrl);
+			command.Parameters.AddWithValue("@AlbumId", song.AlbumId);
 
 			try
 			{
@@ -45,7 +45,7 @@ namespace SE_project
 			string query = "DELETE FROM Song WHERE id = @Id";
 			SqlCommand command = new SqlCommand(query, connection);
 
-			command.Parameters.AddWithValue("@Id", song.id);
+			command.Parameters.AddWithValue("@Id", song.Id);
 
 			try
 			{

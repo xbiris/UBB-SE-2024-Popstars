@@ -30,7 +30,7 @@ namespace SE_project.Services
 		private void AddAlbumIdToSongs(int albumId)
 		{
 			foreach (Song song in _songs) { 
-				song.albumId = albumId; 
+				song.AlbumId = albumId; 
 			}
 		}
 		

@@ -41,7 +41,7 @@ namespace wpfui
 
             foreach(Song song in songList)
             {
-				SongsListBox.Items.Add($"Title: {song.title}, length: {song.length}");
+				SongsListBox.Items.Add($"Title: {song.Title}, length: {song.Length}");
 			}
 
 			foreach(Album album in albumList)

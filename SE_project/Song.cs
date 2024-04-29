@@ -8,15 +8,16 @@ namespace SE_project
 {
 	public class Song
 	{
-		public int id { get; set; }
-		public string title { get; set; }
-		public int length { get; set; }
-		public string songUrl { get; set; }
-		public int albumId { get; set; }
+		public int Id { get; set; }
+		public string Title { get; set; }
+		public int Length { get; set; }
+		public string SongUrl { get; set; }
+		public int AlbumId { get; set; }
 
-		public Song(string title, string songUrl) {
-			this.title = title;
-			this.songUrl = songUrl;
+		public Song(string title, string songUrl)
+		{
+			this.Title = title;
+			this.SongUrl = songUrl;
 		}
 	}
 }

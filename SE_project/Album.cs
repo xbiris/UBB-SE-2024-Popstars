@@ -33,7 +33,7 @@ namespace SE_project
 		{
 			int length = 0;
 			foreach (Song song in Songs) {
-				length += song.length;
+				length += song.Length;
 			}
 			return length;
 		}
