@@ -5,23 +5,23 @@ namespace SE_project.Services
 {
 	public class AlbumService : IService
 	{
-		private AlbumRepo _albumRepo;
-		private SongRepo _songRepo;
+		private AlbumRepo albumRepo;
+		private SongRepo songRepo1;
 		private SongRepo songRepo;
-		public List<Song> _songs;
+		public List<Song> Songs;
 
 		public AlbumService()
 		{
-			_albumRepo = new AlbumRepo();
-			_songRepo = new SongRepo();
+			albumRepo = new AlbumRepo();
+			songRepo1 = new SongRepo();
 			songRepo = new SongRepo();
-			_songs = new List<Song>();
+			Songs = new List<Song>();
 		}
 
 		public void AddAlbum(string title, string releaseDate, string genre, string photoUrl, int creatorId)
 		{
 			var album = new Album(title, releaseDate, genre, photoUrl, new List<Song>());
-			int albumId = _albumRepo.AddAlbum(album, creatorId);
+			int albumId = albumRepo.AddAlbum(album, creatorId);
 			AddAlbumIdToSongs(albumId);
 
 			AddSongsToDb();
@@ -29,14 +29,15 @@ namespace SE_project.Services
 
 		private void AddAlbumIdToSongs(int albumId)
 		{
-			foreach (Song song in _songs) { 
-				song.AlbumId = albumId; 
+			foreach (Song song in Songs)
+			{
+				song.AlbumId = albumId;
 			}
 		}
-		
 		private void AddSongsToDb()
 		{
-			foreach (Song song in _songs) {
+			foreach (Song song in Songs)
+			{
 				songRepo.AddSong(song);
 			}
 		}
@@ -44,17 +45,16 @@ namespace SE_project.Services
 		public void AddSongToList(string title, string songPath)
 		{
 			Song song = new Song(title, songPath);
-			_songs.Add(song);
+			Songs.Add(song);
 		}
         public List<Album> GetAlbumsByCreatorId(int creatorId)
 		{
-			return _albumRepo.GetAlbumsByCreatorId(creatorId);
+			return albumRepo.GetAlbumsByCreatorId(creatorId);
 		}
-
 
         public Album GetAlbumById(int albumId)
 		{
-			return _albumRepo.GetAlbumById(albumId);
+			return albumRepo.GetAlbumById(albumId);
 		}
 	}
 }

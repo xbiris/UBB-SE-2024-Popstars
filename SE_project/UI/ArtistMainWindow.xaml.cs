@@ -46,7 +46,7 @@ namespace wpfui
 
 			foreach(Album album in albumList)
             {
-                AlbumListBox.Items.Add($"Title: {album.title}, genre: {album.genre}");
+                AlbumListBox.Items.Add($"Title: {album.Title}, genre: {album.Genre}");
             }
 
             UpdateArtistInfo(this, EventArgs.Empty);

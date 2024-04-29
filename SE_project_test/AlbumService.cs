@@ -70,9 +70,9 @@ namespace SE_project_test
                 albumService.AddSongToList(title, songPath);
 
                 // Assert
-                Assert.IsTrue(albumService._songs.Count > 0);
-                Assert.AreEqual(title, albumService._songs[0].Title);
-                Assert.AreEqual(songPath, albumService._songs[0].SongUrl);
+                Assert.IsTrue(albumService.Songs.Count > 0);
+                Assert.AreEqual(title, albumService.Songs[0].Title);
+                Assert.AreEqual(songPath, albumService.Songs[0].SongUrl);
             }
 
 

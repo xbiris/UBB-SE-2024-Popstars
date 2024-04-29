@@ -8,10 +8,10 @@ namespace SE_project
 {
 	public class Creator : IUser
 	{
-		public int id { get; set; }
-		public string username { get; set; }
-		public string fullname { get; set; }
-		public string email { get; set; }
+		public int Id { get; set; }
+		public string Username { get; set; }
+		public string Fullname { get; set; }
+		public string Email { get; set; }
 		public string Country { get; set; }
 		public string Birthday { get; set; }
 		public string Socialmedialink { get; set; }
@@ -20,9 +20,9 @@ namespace SE_project
 
         public Creator(string username, string fullname, string email, string country, string birthday, string socialmedialink, string description, string profilePicPath)
 		{
-			this.username = username;
-			this.fullname = fullname;
-			this.email = email;
+			this.Username = username;
+			this.Fullname = fullname;
+			this.Email = email;
 			this.Country = country;
 			this.Birthday = birthday;
 			this.Socialmedialink = socialmedialink;

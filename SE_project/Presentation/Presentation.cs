@@ -8,24 +8,22 @@ namespace SE_project.Presentation
 {
 	public class PresentationSpotify
 	{
-		private CreatorService _creatorService;
-		private SongService _songService;
-		private AlbumService _albumService;
+		private CreatorService creatorService;
+		private SongService songService;
+		private AlbumService albumService;
 
 		public PresentationSpotify()
 		{
-			_creatorService = new CreatorService();
-			_songService = new SongService();
-			_albumService = new AlbumService();
+			creatorService = new CreatorService();
+			songService = new SongService();
+			albumService = new AlbumService();
 		}
-
-		
 
         public void AddCreator(string fullname, string username, string email, string country, string birthday, string socialMediaLink, string description, string profilePicPath, string hashedPass)
 		{
 			try
 			{
-				_creatorService.AddCreator(fullname, username, email, country, birthday, socialMediaLink, description, profilePicPath, hashedPass);
+				creatorService.AddCreator(fullname, username, email, country, birthday, socialMediaLink, description, profilePicPath, hashedPass);
 				Console.WriteLine("Creator added successfully.");
 			}
 			catch (Exception ex)
@@ -34,16 +32,17 @@ namespace SE_project.Presentation
 			}
 		}
 
-		public void AddSongToList(string title, string songUrl) {
+		public void AddSongToList(string title, string songUrl) 
+		{
 			try
 			{
-				_albumService.AddSongToList(title, songUrl);
+				albumService.AddSongToList(title, songUrl);
 				Console.WriteLine("Song added successfully.");
 			}
 			catch (Exception ex)
 			{
-				//Console.WriteLine($"Error adding song: {ex.Message}");
-				throw ex;
+                // Console.WriteLine($"Error adding song: {ex.Message}");
+                throw ex;
 			}
 		}
 
@@ -51,12 +50,12 @@ namespace SE_project.Presentation
 		{
 			try
 			{
-				_songService.AddSong(title, songUrl);
+				songService.AddSong(title, songUrl);
 				Console.WriteLine("Song added successfully.");
 			}
 			catch (Exception ex)
 			{
-				//Console.WriteLine($"Error adding song: {ex.Message}");
+				// Console.WriteLine($"Error adding song: {ex.Message}");
 				throw ex;
 			}
 		}
@@ -65,7 +64,7 @@ namespace SE_project.Presentation
 		{
 			try
 			{
-				_albumService.AddAlbum(title, releaseDate, genre, photoUrl, creatorId);
+				albumService.AddAlbum(title, releaseDate, genre, photoUrl, creatorId);
 				Console.WriteLine("Album added successfully.");
 			}
 			catch (Exception ex)
@@ -74,30 +73,20 @@ namespace SE_project.Presentation
 			}
 		}
 
-
-		private void SelectFile_Click(object sender, RoutedEventArgs e)
-		{
-			OpenFileDialog openFileDialog = new OpenFileDialog();
-			if (openFileDialog.ShowDialog() == DialogResult.OK)
-			{
-				String selectedFilePath = openFileDialog.FileName;
-			}
-		}
-
         public void UpdateCreatorInfo(int creatorId, string socialMediaLink, string profilePicPath, string description)
         {
             try
             {
-                Creator creator = _creatorService.GetCreatorById(creatorId);
+                Creator creator = creatorService.GetCreatorById(creatorId);
                 if (creator != null)
                 {
-                    string fullname = creator.fullname;
-                    string username = creator.username;
-                    string email = creator.email;
+                    string fullname = creator.Fullname;
+                    string username = creator.Username;
+                    string email = creator.Email;
                     string country = creator.Country;
                     string birthday = creator.Birthday;
                     // Call the service to update the Creator
-                    _creatorService.UpdateCreator(creatorId, fullname, username, email, country, birthday, socialMediaLink, description, profilePicPath);
+                    creatorService.UpdateCreator(creatorId, fullname, username, email, country, birthday, socialMediaLink, description, profilePicPath);
                     Console.WriteLine("Creator updated successfully.");
                 }
                 else
@@ -112,8 +101,7 @@ namespace SE_project.Presentation
         }
         public (string, string, string) GetCreatorInfoById(int creatorId)
         {
-            return _creatorService.GetCreatorInfoById(creatorId);
+            return creatorService.GetCreatorInfoById(creatorId);
         }
-
     }
 }
