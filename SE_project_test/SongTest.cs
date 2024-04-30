@@ -141,21 +141,6 @@ namespace SE_project_test
         }
 
         [TestMethod]
-        public void TestIntegration()
-        {
-            // Integration testing can involve database operations, file I/O, etc.
-            // Simulate database access or file I/O if applicable
-            // Assert correct interactions and behavior
-        }
-
-        [TestMethod]
-        public void TestPerformance()
-        {
-            // Measure performance of operations involving Song objects
-            // Assert performance meets requirements
-        }
-
-        [TestMethod]
         public void TestSerializationDeserialization()
         {
             // Arrange
