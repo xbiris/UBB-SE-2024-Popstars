@@ -29,5 +29,7 @@ namespace SE_project
 			this.Description = description;
 			this.ProfilePicPath = profilePicPath;
         }
+
+
 	}
 }
