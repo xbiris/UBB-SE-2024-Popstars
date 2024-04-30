@@ -8,28 +8,25 @@ namespace SE_project
 {
 	internal class StatisticsService
 	{
-
 		public StatisticsService(Creator creator)
 		{
-
 		}
 
-		public int getGlobalNumberOfSaves(int creatorId)
+		public int GetGlobalNumberOfSaves(int creatorId)
 		{
 			return -1;
 		}
-		public int getGlobalNumberOfShares(int creatorId)
+		public int GetGlobalNumberOfShares(int creatorId)
 		{
 			return -1;
 		}
-		public int getGlobalNumberOfStreams(int creatorId)
+		public int GetGlobalNumberOfStreams(int creatorId)
 		{
 			return -1;
 		}
-		public int getGlobalNumberOfPlaylistsAdded(int creatorId)
+        public int GetGlobalNumberOfPlaylistsAdded(int creatorId)
 		{
 			return -1;
 		}
-
 	}
 }

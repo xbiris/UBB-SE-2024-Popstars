@@ -15,7 +15,7 @@ namespace SE_project
 		{
 			string connectionString =
 				ConfigurationLoaderFactory.GetConfigurationLoader("appconfig.json").
-				GetValue<string>("DatabaseConnection"); ;
+				GetValue<string>("DatabaseConnection");
 			connection = new SqlConnection(connectionString);
 		}
 
@@ -74,8 +74,7 @@ namespace SE_project
                 {
                     Song song = new Song(
                         reader["title"].ToString(),
-                        reader["songUrl"].ToString()
-                    );
+                        reader["songUrl"].ToString());
                     songs.Add(song);
                 }
                 reader.Close();
@@ -92,7 +91,6 @@ namespace SE_project
             return songs;
         }
 
-
         public Song GetSongById(int songId)
 		{
 			string query = "SELECT id, title, songUrl FROM Song WHERE id = @Id";
@@ -107,8 +105,7 @@ namespace SE_project
 				{
 					return new Song(
 						reader["title"].ToString(),
-						reader["songUrl"].ToString()
-					);
+						reader["songUrl"].ToString());
 				}
 				return null;
 			}
@@ -117,9 +114,8 @@ namespace SE_project
 				connection.Close();
 			}
 		}
-		
 
-		public Song getSongByTitle(String title)
+		public Song GetSongByTitle(string title)
 		{
 			string query = "SELECT id, title, songUrl FROM Song WHERE title = @Title";
 			SqlCommand command = new SqlCommand(query, connection);
@@ -133,8 +129,7 @@ namespace SE_project
 				{
 					return new Song(
 						reader["title"].ToString(),
-						reader["songUrl"].ToString()
-					);
+						reader["songUrl"].ToString());
 				}
 				return null;
 			}
@@ -144,7 +139,7 @@ namespace SE_project
 			}
 		}
 
-		public Song GetSongByUrl(String songPath)
+		public Song GetSongByUrl(string songPath)
 		{
 			string query = "SELECT id, title, songUrl FROM Song WHERE songUrl = @songUrl";
 			SqlCommand command = new SqlCommand(query, connection);
@@ -158,8 +153,7 @@ namespace SE_project
 				{
 					return new Song(
 						reader["title"].ToString(),
-						reader["songUrl"].ToString()
-					);
+						reader["songUrl"].ToString());
 				}
 				return null;
 			}
@@ -184,8 +178,7 @@ namespace SE_project
 				{
 					songs.Add(new Song(
 						reader["title"].ToString(),
-						reader["songUrl"].ToString()
-					));
+						reader["songUrl"].ToString()));
 				}
 				return songs;
 			}
@@ -193,7 +186,6 @@ namespace SE_project
 			{
 				connection.Close();
 			}
-
 		}
 	}
 }

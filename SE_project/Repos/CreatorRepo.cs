@@ -24,9 +24,9 @@ namespace SE_project
 		{
 			string query = "INSERT INTO Creator(fullname, username, email, country, birthdate, socialmedialink, description, profilePicPath, password)  VALUES (@FullName, @Username, @Email, @Country, @Birthdate, @SocialMediaLink, @Description, @ProfilePicPath, @Password)";
 			SqlCommand command = new SqlCommand(query, connection);
-			command.Parameters.AddWithValue("@FullName", creator.fullname);
-			command.Parameters.AddWithValue("@Username", creator.username);
-			command.Parameters.AddWithValue("@Email", creator.email);
+			command.Parameters.AddWithValue("@FullName", creator.Fullname);
+			command.Parameters.AddWithValue("@Username", creator.Username);
+			command.Parameters.AddWithValue("@Email", creator.Email);
 			command.Parameters.AddWithValue("@Country", creator.Country);
 			command.Parameters.AddWithValue("@Birthdate", creator.Birthday);
 			command.Parameters.AddWithValue("@SocialMediaLink", creator.Socialmedialink);
@@ -50,7 +50,7 @@ namespace SE_project
 			string query = "DELETE FROM Creator WHERE id = @Id";
 			SqlCommand command = new SqlCommand(query, connection);
 
-			command.Parameters.AddWithValue("@Id", creator.id);
+			command.Parameters.AddWithValue("@Id", creator.Id);
 
 			try
 			{

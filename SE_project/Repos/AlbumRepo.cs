@@ -11,10 +11,9 @@ namespace SE_project
 		private SqlConnection connection;
 
 		public AlbumRepo()
-		{ 
-			string connectionString = 
-				ConfigurationLoaderFactory.GetConfigurationLoader("appconfig.json").
-				GetValue<string>("DatabaseConnection"); ;
+		{
+			string connectionString = ConfigurationLoaderFactory.GetConfigurationLoader("appconfig.json").
+				GetValue<string>("DatabaseConnection");
 			connection = new SqlConnection(connectionString);
 		}
 
@@ -23,17 +22,17 @@ namespace SE_project
 			string query = "INSERT INTO Album (title, releasedate, genre, photourl, creator_id) VALUES (@Title, @ReleaseDate, @Genre, @PhotoUrl, @CreatorId); SELECT SCOPE_IDENTITY();";
 			SqlCommand command = new SqlCommand(query, connection);
 
-			command.Parameters.AddWithValue("@Title", album.title);
-			command.Parameters.AddWithValue("@ReleaseDate", album.releaseDate);
-			command.Parameters.AddWithValue("@Genre", album.genre);
-			command.Parameters.AddWithValue("@PhotoUrl", album.photoUrl);
+			command.Parameters.AddWithValue("@Title", album.Title);
+			command.Parameters.AddWithValue("@ReleaseDate", album.ReleaseDate);
+			command.Parameters.AddWithValue("@Genre", album.Genre);
+			command.Parameters.AddWithValue("@PhotoUrl", album.PhotoUrl);
 			command.Parameters.AddWithValue("@CreatorId", creatorId);
 
 			try
 			{
 				connection.Open();
 				int newAlbumId = Convert.ToInt32(command.ExecuteScalar());
-				return newAlbumId; 
+				return newAlbumId;
 			}
 			catch (Exception ex)
 			{
@@ -63,8 +62,7 @@ namespace SE_project
                         reader["releasedate"].ToString(),
                         reader["genre"].ToString(),
                         reader["photourl"].ToString(),
-                        new List<Song>()
-                    );
+                        new List<Song>());
                     albums.Add(album);
                 }
                 reader.Close();
@@ -80,7 +78,6 @@ namespace SE_project
                 connection.Close();
             }
         }
-
 
         public Album GetAlbumById(int albumId)
 		{
@@ -100,8 +97,7 @@ namespace SE_project
 						reader["releasedate"].ToString(),
 						reader["genre"].ToString(),
 						reader["photourl"].ToString(),
-						new List<Song>()
-					);
+						new List<Song>());
 				}
 				reader.Close();
 				return album;
