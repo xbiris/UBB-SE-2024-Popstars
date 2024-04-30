@@ -20,7 +20,24 @@ namespace SE_project
 
         public Creator(string username, string fullname, string email, string country, string birthday, string socialmedialink, string description, string profilePicPath)
 		{
-			this.username = username;
+            if (username == null)
+                throw new ArgumentNullException(nameof(username));
+            if (fullname == null)
+                throw new ArgumentNullException(nameof(fullname));
+            if (email == null)
+                throw new ArgumentNullException(nameof(email));
+            if (country == null)
+                throw new ArgumentNullException(nameof(country));
+            if (birthday == null)
+                throw new ArgumentNullException(nameof(birthday));
+            if (socialmedialink == null)
+                throw new ArgumentNullException(nameof(socialmedialink));
+            if (description == null)
+                throw new ArgumentNullException(nameof(description));
+            if (profilePicPath == null)
+                throw new ArgumentNullException(nameof(profilePicPath));
+
+            this.username = username;
 			this.fullname = fullname;
 			this.email = email;
 			this.Country = country;
@@ -29,5 +46,7 @@ namespace SE_project
 			this.Description = description;
 			this.ProfilePicPath = profilePicPath;
         }
+
+
 	}
 }

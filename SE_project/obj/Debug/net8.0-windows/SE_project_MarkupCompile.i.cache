@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\General\Facultate\ISS\SE_project\SE_project\obj\Debug\net8.0-windows\
+C:\Users\Maria\source\repos\UBB-SE-2024-Popstars\SE_project\obj\Debug\net8.0-windows\
 SE_project
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
-C:\General\Facultate\ISS\SE_project\SE_project\App.xaml
-11407045341
+C:\Users\Maria\source\repos\UBB-SE-2024-Popstars\SE_project\App.xaml
+5-68587911
 
-6-1274999462
-198155382431
-MainWindow.xaml;
+24-25486301
+229934169445
+MainWindow.xaml;UI\ArtistMainWindow.xaml;UI\Statistics.xaml;UI\UpdateCreatorInfoWindow.xaml;UI\UploadAlbum.xaml;
 
 True
 

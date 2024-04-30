@@ -3,5 +3,6 @@
 ################################################################################
 
 /.vs
+/SE_project/bin/Debug/net8.0-windows
 /SE_project/obj
 /SE_project/bin/Debug/net8.0-windows

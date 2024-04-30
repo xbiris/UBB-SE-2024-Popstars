@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\General\\Facultate\\ISS\\SE_project\\SE_project\\SE_project.csproj": {}
+    "C:\\Users\\Maria\\source\\repos\\UBB-SE-2024-Popstars\\SE_project\\SE_project.csproj": {}
   },
   "projects": {
-    "C:\\General\\Facultate\\ISS\\SE_project\\SE_project\\SE_project.csproj": {
+    "C:\\Users\\Maria\\source\\repos\\UBB-SE-2024-Popstars\\SE_project\\SE_project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\General\\Facultate\\ISS\\SE_project\\SE_project\\SE_project.csproj",
+        "projectUniqueName": "C:\\Users\\Maria\\source\\repos\\UBB-SE-2024-Popstars\\SE_project\\SE_project.csproj",
         "projectName": "SE_project",
-        "projectPath": "C:\\General\\Facultate\\ISS\\SE_project\\SE_project\\SE_project.csproj",
-        "packagesPath": "C:\\Users\\maghe\\.nuget\\packages\\",
-        "outputPath": "C:\\General\\Facultate\\ISS\\SE_project\\SE_project\\obj\\",
+        "projectPath": "C:\\Users\\Maria\\source\\repos\\UBB-SE-2024-Popstars\\SE_project\\SE_project.csproj",
+        "packagesPath": "C:\\Users\\Maria\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Maria\\source\\repos\\UBB-SE-2024-Popstars\\SE_project\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\maghe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Maria\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -44,6 +48,22 @@
       "frameworks": {
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
+          "dependencies": {
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[5.2.0, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.8.0, )"
+            },
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.8.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -63,7 +83,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
