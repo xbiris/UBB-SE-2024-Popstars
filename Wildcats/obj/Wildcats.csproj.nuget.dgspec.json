@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\denis\\source\\repos\\UBB-SE-2024-Popstars\\Wildcats\\Wildcats.csproj": {}
+    "C:\\Users\\Alice Albu\\source\\repos\\UBB-SE-2024-Popstars1\\Wildcats\\Wildcats.csproj": {}
   },
   "projects": {
-    "C:\\Users\\denis\\source\\repos\\UBB-SE-2024-Popstars\\Wildcats\\Wildcats.csproj": {
+    "C:\\Users\\Alice Albu\\source\\repos\\UBB-SE-2024-Popstars1\\Wildcats\\Wildcats.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\denis\\source\\repos\\UBB-SE-2024-Popstars\\Wildcats\\Wildcats.csproj",
+        "projectUniqueName": "C:\\Users\\Alice Albu\\source\\repos\\UBB-SE-2024-Popstars1\\Wildcats\\Wildcats.csproj",
         "projectName": "Wildcats",
-        "projectPath": "C:\\Users\\denis\\source\\repos\\UBB-SE-2024-Popstars\\Wildcats\\Wildcats.csproj",
-        "packagesPath": "C:\\Users\\denis\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\denis\\source\\repos\\UBB-SE-2024-Popstars\\Wildcats\\obj\\",
+        "projectPath": "C:\\Users\\Alice Albu\\source\\repos\\UBB-SE-2024-Popstars1\\Wildcats\\Wildcats.csproj",
+        "packagesPath": "C:\\Users\\Alice Albu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Alice Albu\\source\\repos\\UBB-SE-2024-Popstars1\\Wildcats\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\denis\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Alice Albu\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -67,7 +63,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300-preview.24203.14/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
