@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using Microsoft.Data.SqlClient;
-using System.Configuration;
 
 namespace SE_project
 {
@@ -44,7 +43,7 @@ namespace SE_project
 				connection.Close();
 			}
 		}
-        public List<Album> GetAlbumsByCreatorId(int creatorId)
+        public List<Album>? GetAlbumsByCreatorId(int creatorId)
         {
             List<Album> albums = new List<Album>();
             string query = "SELECT id, title, releasedate, genre, photourl FROM Album WHERE creator_id = @CreatorId";
@@ -81,7 +80,7 @@ namespace SE_project
 
         public Album GetAlbumById(int albumId)
 		{
-			Album album = null;
+			Album? album = null;
 			string query = "SELECT id, title, releasedate, genre, photourl FROM Album WHERE id = @Id";
 			SqlCommand command = new SqlCommand(query, connection);
 			command.Parameters.AddWithValue("@Id", albumId);

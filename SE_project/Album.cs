@@ -16,7 +16,8 @@ namespace SE_project
         public string PhotoUrl { get; set; }
 
 		public List<Song> Songs { get; set; }
-		public Album(string title, string releaseDate, string genre, string photoUrl, List<Song> Songs) {
+		public Album(string title, string releaseDate, string genre, string photoUrl, List<Song> songs)
+		{
 			this.Title = title;
 			this.ReleaseDate = releaseDate;
 			this.Genre = genre;
@@ -32,7 +33,7 @@ namespace SE_project
 		public int GetLength()
 		{
 			int length = 0;
-			foreach (Song song in Songs) 
+			foreach (Song song in Songs)
 			{
 				length += song.Length;
 			}

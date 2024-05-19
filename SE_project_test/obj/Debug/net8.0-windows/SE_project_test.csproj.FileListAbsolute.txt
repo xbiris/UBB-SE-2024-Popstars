@@ -42,7 +42,6 @@ C:\Users\denis\source\repos\UBB-SE-2024-Popstars\SE_project_test\bin\Debug\net8.
 C:\Users\denis\source\repos\UBB-SE-2024-Popstars\SE_project_test\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.Wpf.dll
 C:\Users\denis\source\repos\UBB-SE-2024-Popstars\SE_project_test\bin\Debug\net8.0-windows\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
 C:\Users\denis\source\repos\UBB-SE-2024-Popstars\SE_project_test\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
-C:\Users\denis\source\repos\UBB-SE-2024-Popstars\SE_project_test\bin\Debug\net8.0-windows\NuGet.Frameworks.dll
 C:\Users\denis\source\repos\UBB-SE-2024-Popstars\SE_project_test\bin\Debug\net8.0-windows\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\denis\source\repos\UBB-SE-2024-Popstars\SE_project_test\bin\Debug\net8.0-windows\System.Memory.Data.dll
 C:\Users\denis\source\repos\UBB-SE-2024-Popstars\SE_project_test\bin\Debug\net8.0-windows\System.Runtime.Caching.dll

@@ -32,7 +32,7 @@ namespace SE_project.Presentation
 			}
 		}
 
-		public void AddSongToList(string title, string songUrl) 
+		public void AddSongToList(string title, string songUrl)
 		{
 			try
 			{
