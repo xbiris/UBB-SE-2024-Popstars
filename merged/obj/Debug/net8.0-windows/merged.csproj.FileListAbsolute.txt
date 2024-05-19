@@ -1,0 +1,17 @@
+C:\Users\denis\source\repos\UBB-SE-2024-Popstars\merged\bin\Debug\net8.0-windows\merged.exe
+C:\Users\denis\source\repos\UBB-SE-2024-Popstars\merged\bin\Debug\net8.0-windows\merged.deps.json
+C:\Users\denis\source\repos\UBB-SE-2024-Popstars\merged\bin\Debug\net8.0-windows\merged.runtimeconfig.json
+C:\Users\denis\source\repos\UBB-SE-2024-Popstars\merged\bin\Debug\net8.0-windows\merged.dll
+C:\Users\denis\source\repos\UBB-SE-2024-Popstars\merged\bin\Debug\net8.0-windows\merged.pdb
+C:\Users\denis\source\repos\UBB-SE-2024-Popstars\merged\obj\Debug\net8.0-windows\merged.Form1.resources
+C:\Users\denis\source\repos\UBB-SE-2024-Popstars\merged\obj\Debug\net8.0-windows\merged.csproj.GenerateResource.cache
+C:\Users\denis\source\repos\UBB-SE-2024-Popstars\merged\obj\Debug\net8.0-windows\merged.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\denis\source\repos\UBB-SE-2024-Popstars\merged\obj\Debug\net8.0-windows\merged.AssemblyInfoInputs.cache
+C:\Users\denis\source\repos\UBB-SE-2024-Popstars\merged\obj\Debug\net8.0-windows\merged.AssemblyInfo.cs
+C:\Users\denis\source\repos\UBB-SE-2024-Popstars\merged\obj\Debug\net8.0-windows\merged.csproj.CoreCompileInputs.cache
+C:\Users\denis\source\repos\UBB-SE-2024-Popstars\merged\obj\Debug\net8.0-windows\merged.sourcelink.json
+C:\Users\denis\source\repos\UBB-SE-2024-Popstars\merged\obj\Debug\net8.0-windows\merged.dll
+C:\Users\denis\source\repos\UBB-SE-2024-Popstars\merged\obj\Debug\net8.0-windows\refint\merged.dll
+C:\Users\denis\source\repos\UBB-SE-2024-Popstars\merged\obj\Debug\net8.0-windows\merged.pdb
+C:\Users\denis\source\repos\UBB-SE-2024-Popstars\merged\obj\Debug\net8.0-windows\merged.genruntimeconfig.cache
+C:\Users\denis\source\repos\UBB-SE-2024-Popstars\merged\obj\Debug\net8.0-windows\ref\merged.dll

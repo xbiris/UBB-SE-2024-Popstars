@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ISS Wildcats")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d20266dcd97e40826927c0b79263fbb201bda144")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a57e6a495bba611035ef6c5d71a19ca357a315d3")]
 [assembly: System.Reflection.AssemblyProductAttribute("ISS Wildcats")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ISS Wildcats")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

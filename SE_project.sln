@@ -5,7 +5,11 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SE_project", "SE_project\SE_project.csproj", "{F2BC03A2-1F9E-49D1-B6DF-46ECA46AF853}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SE_project_test", "SE_project_test\SE_project_test.csproj", "{54B9B24D-A85E-451F-98A7-7B0DFFC01DED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SE_project_test", "SE_project_test\SE_project_test.csproj", "{54B9B24D-A85E-451F-98A7-7B0DFFC01DED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wildcats", "Wildcats\Wildcats.csproj", "{6021C14C-88F4-43F7-A8C8-20FF13BDD9AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "merged", "merged\merged.csproj", "{C2F95694-37EE-4484-80C5-693770B530A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{54B9B24D-A85E-451F-98A7-7B0DFFC01DED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54B9B24D-A85E-451F-98A7-7B0DFFC01DED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54B9B24D-A85E-451F-98A7-7B0DFFC01DED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6021C14C-88F4-43F7-A8C8-20FF13BDD9AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6021C14C-88F4-43F7-A8C8-20FF13BDD9AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6021C14C-88F4-43F7-A8C8-20FF13BDD9AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6021C14C-88F4-43F7-A8C8-20FF13BDD9AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2F95694-37EE-4484-80C5-693770B530A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2F95694-37EE-4484-80C5-693770B530A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2F95694-37EE-4484-80C5-693770B530A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2F95694-37EE-4484-80C5-693770B530A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

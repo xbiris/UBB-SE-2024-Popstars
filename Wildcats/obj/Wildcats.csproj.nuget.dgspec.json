@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Alice Albu\\source\\repos\\UBB-SE-2024-Popstars1\\Wildcats\\Wildcats.csproj": {}
+    "C:\\Users\\denis\\source\\repos\\UBB-SE-2024-Popstars\\Wildcats\\Wildcats.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Alice Albu\\source\\repos\\UBB-SE-2024-Popstars1\\Wildcats\\Wildcats.csproj": {
+    "C:\\Users\\denis\\source\\repos\\UBB-SE-2024-Popstars\\Wildcats\\Wildcats.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Alice Albu\\source\\repos\\UBB-SE-2024-Popstars1\\Wildcats\\Wildcats.csproj",
+        "projectUniqueName": "C:\\Users\\denis\\source\\repos\\UBB-SE-2024-Popstars\\Wildcats\\Wildcats.csproj",
         "projectName": "Wildcats",
-        "projectPath": "C:\\Users\\Alice Albu\\source\\repos\\UBB-SE-2024-Popstars1\\Wildcats\\Wildcats.csproj",
-        "packagesPath": "C:\\Users\\Alice Albu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Alice Albu\\source\\repos\\UBB-SE-2024-Popstars1\\Wildcats\\obj\\",
+        "projectPath": "C:\\Users\\denis\\source\\repos\\UBB-SE-2024-Popstars\\Wildcats\\Wildcats.csproj",
+        "packagesPath": "C:\\Users\\denis\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\denis\\source\\repos\\UBB-SE-2024-Popstars\\Wildcats\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Alice Albu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\denis\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -44,6 +48,42 @@
       "frameworks": {
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
+          "dependencies": {
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[5.2.0, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.9.0, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.20.70, )"
+            },
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.1.118, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.8.0, )"
+            },
+            "xunit.runner.console": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.8.0, )"
+            },
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.8.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -59,11 +99,11 @@
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             },
-            "Microsoft.WindowsDesktop.App.WindowsForms": {
+            "Microsoft.WindowsDesktop.App": {
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300-preview.24203.14/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

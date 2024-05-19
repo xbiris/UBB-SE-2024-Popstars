@@ -54,3 +54,7 @@ SE_project_test/obj/SE_project_test.csproj.nuget.g.props
 SE_project_test/obj/SE_project_test.csproj.nuget.g.targets
 
 SE_project_test/SE_project_test.csproj
+
+Wildcats/bin/Debug/
+
+Wildcats/bin/Release/

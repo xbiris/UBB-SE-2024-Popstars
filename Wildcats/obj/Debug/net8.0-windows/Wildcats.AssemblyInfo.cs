@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Wildcats")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4fabfe1c706bde293784a49ada3f4e1be5a1d1c4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+54b1c9b3f89a470da53481a59e2a9dca92f28679")]
 [assembly: System.Reflection.AssemblyProductAttribute("Wildcats")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Wildcats")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
